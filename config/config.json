@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "goColorado3Richmond",
+      "password": "???",
       "database": "staycare",
       "host": "localhost",
       "dialect": "mysql"
