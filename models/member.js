@@ -2,14 +2,12 @@ module.exports = function(sequelize, DataTypes) {
   var Member = sequelize.define("Member", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len: [4]
+      allowNull: false
     },
     /*this represents whether it's a child, parent, emergencycontact*/
     membertype: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len: [4]
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
