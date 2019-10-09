@@ -1,71 +1,37 @@
-use fth2zolugpxwyrzu;
+use staycare;
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2003, "Acura","TL",78944,"Black", true, sysdate(),sysdate());
+INSERT INTO members(`name`, `membertype`,`email`,`dob`,`phone`,FamilyId,
+ `textaddress`,`allergies`,`medication`,`image`, `createdat`, `updatedat`)
+VALUES ('Herman','Parent','Herman.Munster@Scaryway.com', null,'804-555-1213',1,
+'Herman.Munster@Scaryway.com',null,null,null,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2001, "Toyota","Camry",125652,"Beige", true, sysdate(),sysdate());
+INSERT INTO members(`name`, `membertype`,`email`,`dob`,`phone`,FamilyId,
+ `textaddress`,`allergies`,`medication`,`image`, `createdat`, `updatedat`)
+VALUES ('Lily','Parent','Lily.Munster@Scaryway.com', null,'804-555-1214',1,
+'Lily.Munster@Scaryway.com',null,null,null,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2010, "Toyota","Rav-4",89366,"Silver", true, sysdate(),sysdate());
+INSERT INTO members(`name`, `membertype`,`email`,`dob`,`phone`,FamilyId,
+ `textaddress`,`allergies`,`medication`,`image`, `createdat`, `updatedat`)
+VALUES ('Eddie','Child',null, '2019-10-09',null,1,
+null,'Peanuts','N/A',null,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2013, "Subaru","Outback",94945,"Green", true, sysdate(),sysdate());
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Diaper',curdate(),'10:00', 'BM',null,3,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2009, "Nissan","Altima",55895,"Blue", true, sysdate(),sysdate());
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Diaper',curdate(),'13:00', 'Wet',null,3,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2019, "Nissan","Rogue",1253,"Red", true, sysdate(),sysdate());
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Diaper',curdate(),'15:00', 'Wet',null,3,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2010, "Honda","Fit",43534,"White", true, sysdate(),sysdate());
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Food',curdate(),'11:30', 'Chicken, french fries, apple sauce','all',3,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (1988, "Honda","Accord",224283,"Black", true, sysdate(),sysdate());
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Food',curdate(),'14:30', 'Animal crackers','all',3,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (1987, "Hyundai","Sonata",99567,"Dark Blue", true, sysdate(),sysdate());
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Sleep',curdate(),'12:30', '13:30',null,3,curtime(),curtime());
 
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2002, "Hyundai","Santa Fe",97538,"Orange", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2003, "Ford","Escape",11756,"Green", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2007, "Nissan","350Z",88875,"Red", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2009, "Ford","Flex",94042,"Dark Red", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (1999, "Ford","F-250",203678,"Dark Blue", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (1969, "Toyota","Corolla",231589,"Gray", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (1975, "Chevrolet","Chevelle",178147,"Orange", true, sysdate(),sysdate());
-
-insert into Cars (year, make, model, mileage, color, sold, createdat,updatedat)
-values (2016, "Chevrolet","Camaro",32937,"Green", true, sysdate(),sysdate());
-
-insert into Customers (name, address, email, phone, createdat,updatedat)
-values ("John Smith", "123 Lucy Lane, Charleston, WV","jsmith@gmail.com","917-555-1212", sysdate(),sysdate());
-
-insert into Customers (name, address, email, phone, createdat,updatedat)
-values ("Jane Doe", "123 Sesame Street, Columbus, OH","janedoe@yahoo.com","712-555-1212", sysdate(),sysdate());
-
-insert into Customers (name, address, email, phone, createdat,updatedat)
-values ("Natalie Geoch", "12101 Leafgreen Court, Richmond, CA","nat_geo99@hotmail.com","510-555-1212", sysdate(),sysdate());
-
-insert into Customers (name, address, email, phone, createdat,updatedat)
-values ("Charles Todd", "186 Fleet Street, Nashville, TN","c.todd@gmail.com","615-555-1212", sysdate(),sysdate());
-
-insert into Customers (name, address, email, phone, createdat,updatedat)
-values ("Arthur Kipley", "589 W. Main Street, Detroit, MI","rocket_man_88@gmail.com","313-555-1212", sysdate(),sysdate());
-
-insert into Customers (name, address, email, phone, createdat,updatedat)
-values ("Penelope Brown", "2103 Cottage Avenue, Austin, TX","penny_ln221@aol.com","737-555-1212", sysdate(),sysdate());
-
+INSERT INTO activities(`activitycode`, `activitydate`,`time`,`result1`,`result2`,`MemberId`, `createdat`, `updatedat`)
+VALUES ('Notes',curdate(),null,'Eddie was an angel as always', null,3,curtime(),curtime());

@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS fth2zolugpxwyrzu;
-CREATE DATABASE fth2zolugpxwyrzu;
+DROP DATABASE IF EXISTS staycare;
+CREATE DATABASE staycare;
