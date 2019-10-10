@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar"
-import AddBtn from "./components/AddBtn"
+import Login from "./pages/Login";
+import NavHome from "../src/components/NavHome/NavHome"
+//import UpdateDailyLog from "../src/pages/UpdateDailyLog";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <AddBtn />
+        <NavHome />
+        <Login />
+        
       </div>
     );
   }

@@ -33,3 +33,5 @@ class UpdateDailyLog extends Component {
     )
   }
 }
+
+export default UpdateDailyLog;
