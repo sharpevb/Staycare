@@ -2,8 +2,7 @@ module.exports = function(sequelize, DataTypes) {
   var Family = sequelize.define("Family", {
     familyname: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len: [4]
+      allowNull: false
     },
     primaryphone: {
       type: DataTypes.STRING,
