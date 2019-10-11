@@ -1,0 +1,22 @@
+h1 {
+    padding-top: 10px;
+}
+h5 {
+    padding-top: 10px;
+    margin-bottom: -5px;
+}
+.card {
+    top: 100px;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+}
+.form-label-group {
+    margin-bottom: 30px;
+}
+.btn, .form-control {
+    border-radius: 2rem;
+    padding: 15px;
+}
+.form-signin {
+    padding: 0px 40px 30px 40px;
+}
