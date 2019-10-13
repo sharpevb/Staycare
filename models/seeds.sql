@@ -1,5 +1,14 @@
 use staycare;
 
+INSERT INTO families(`familyname`, `primaryphone`,`address1`,`address2`, `createdat`, `updatedat`)
+VALUES ('Munster','804-555-1212','1313 Mockingbird Lane', 'Mockingbird Heights, VA',curtime(),curtime());
+
+INSERT INTO families(`familyname`, `primaryphone`,`address1`,`address2`, `createdat`, `updatedat`)
+VALUES ('Jones','804-285-1212','123 Lucy Lane', 'Richmond, VA',curtime(),curtime());
+
+INSERT INTO families(`familyname`, `primaryphone`,`address1`,`address2`, `createdat`, `updatedat`)
+VALUES ('Allen','804-775-7575','100 Mapleway', 'Henrico, VA',curtime(),curtime());
+
 INSERT INTO members(`name`, `membertype`,`email`,`dob`,`phone`,FamilyId,
  `textaddress`,`allergies`,`medication`,`image`, `createdat`, `updatedat`)
 VALUES ('Herman','Parent','Herman.Munster@Scaryway.com', null,'804-555-1213',1,

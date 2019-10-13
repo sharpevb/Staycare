@@ -1,0 +1,2 @@
+use sequelize_passport;
+

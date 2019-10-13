@@ -41,4 +41,6 @@ module.exports = {
       res.json(dbMember);
     });
   }
+
+  
 };

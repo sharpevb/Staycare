@@ -1,7 +1,10 @@
-{
+const fs = require('fs')
+
+module.exports = {
+
     "development": {
       "username": "root",
-      "password": "????",
+      "password": process.env.DB_PASSWORD,
       "database": "staycare",
       "host": "localhost",
       "dialect": "mysql"
@@ -18,4 +21,3 @@
       "dialect": "mysql"
     }
   }
-  

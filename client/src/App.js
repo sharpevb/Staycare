@@ -1,19 +1,23 @@
-import React, { Component } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
-import NavHome from "../src/components/NavHome/NavHome"
-//import UpdateDailyLog from "../src/pages/UpdateDailyLog";
+import NoMatch from "./pages/UpdateDailyLog";
+import NavHome from "../src/components/NavHome/NavHome";
+import Profile from "../src/pages/Profile";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+function App() {
+  return (
+    <Router>
+      <div>
         <NavHome />
-        <Login />
-        
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/profile" component={Profile} />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;
