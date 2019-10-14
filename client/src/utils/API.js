@@ -16,8 +16,8 @@ export default {
     return axios.delete("/api/member/" + id);
   },
   // Update the member with the given id
-  updateMember: function (id) {
-    return axios.put("/api/member/" + id);
+  updateMember: function (id,memberData) {
+    return axios.put("/api/member/" + id,memberData);
   },
   // Saves a member to the database
   addMember: function (memberData) {
@@ -36,8 +36,8 @@ export default {
     return axios.delete("/api/family/" + id);
   },
   // Update the family with the given id
-  updateFamily: function (id) {
-    return axios.put("/api/family/" + id);
+  updateFamily: function (id,memberData) {
+    return axios.put("/api/family/" + id,memberData);
   },
   // Saves a family to the database
   addFamily: function (memberData) {
@@ -56,8 +56,8 @@ export default {
     return axios.delete("/api/activity/" + id);
   },
   // Update the activity with the given id
-  updateActivity: function (id) {
-    return axios.put("/api/activity/" + id);
+  updateActivity: function (id,memberData) {
+    return axios.put("/api/activity/" + id,memberData);
   },
   // Saves a activity to the database
   addActivity: function (memberData) {
