@@ -16,8 +16,8 @@ export default {
     return axios.delete("/api/member/" + id);
   },
   // Update the member with the given id
-  updateMember: function (id) {
-    return axios.put("/api/member/" + id);
+  updateMember: function (id,memberData) {
+    return axios.put("/api/member/" + id,memberData);
   },
   // Saves a member to the database
   addMember: function (memberData) {
@@ -36,8 +36,8 @@ export default {
     return axios.delete("/api/family/" + id);
   },
   // Update the family with the given id
-  updateFamily: function (id) {
-    return axios.put("/api/family/" + id);
+  updateFamily: function (id,memberData) {
+    return axios.put("/api/family/" + id,memberData);
   },
   // Saves a family to the database
   addFamily: function (memberData) {
@@ -56,28 +56,26 @@ export default {
     return axios.delete("/api/activity/" + id);
   },
   // Update the activity with the given id
-  updateActivity: function (id) {
-    return axios.put("/api/activity/" + id);
+  updateActivity: function (id,memberData) {
+    return axios.put("/api/activity/" + id,memberData);
   },
   // Saves a activity to the database
   addActivity: function (memberData) {
     return axios.post("/api/activity", memberData);
+  },
+
+  // get the activities associated with a child for specified date.  Sending in an object {"MemberId":"3", "activitydate":"2019-10-09"}
+  findActivityByChildId: function (id) {
+    return axios.get("/api/activity/child/" + JSON.stringify(id));
+  },
+  // get the activities associated with a child for specified date
+  findMembersByFamily: function (id) {
+    return axios.get("/api/member/family/" + id);
+  },
+//this will check the login credentials.  Sending in an object
+  validateUser: function (id) {
+    //alert("validate API "+JSON.stringify(id));
+    
+    return axios.get("/api/member/validate/"+ JSON.stringify(id));
   }
 };
-
-
-// //need where clause by family ID, add functionality in membercontroller
-// app.get("/", function (req, res) {    
-// db.Car.findAll(
-//   {
-//     include: [db.Customer],
-//     order: ["make", "model"],
-//     where: {
-//       sold: false
-//     }
-//   }).then(function (dbCars) {
-//     res.render("index", {
-//       cars: dbCars
-//     });
-//   });
-// });
