@@ -1,7 +1,6 @@
-const fs = require('fs')
+const fs = require('fs');
 
 module.exports = {
-
     "development": {
       "username": "root",
       "password": process.env.DB_PASSWORD,
