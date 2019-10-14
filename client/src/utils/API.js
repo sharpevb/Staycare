@@ -64,3 +64,20 @@ export default {
     return axios.post("/api/activity", memberData);
   }
 };
+
+
+// //need where clause by family ID, add functionality in membercontroller
+// app.get("/", function (req, res) {    
+// db.Car.findAll(
+//   {
+//     include: [db.Customer],
+//     order: ["make", "model"],
+//     where: {
+//       sold: false
+//     }
+//   }).then(function (dbCars) {
+//     res.render("index", {
+//       cars: dbCars
+//     });
+//   });
+// });
