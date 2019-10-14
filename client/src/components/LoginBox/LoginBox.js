@@ -1,72 +1,67 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 import "./style.css";
-import { Redirect } from "react-router-dom";
 
 class LoginBox extends Component {
-  state = {};
 
-  submitLogin(e) {
-    e.preventDefault();
+    state = {
+        familyId: "",
+        email: "",
+        password: ""
+    };
 
-    //alert('calling redirect ');
-    //     return <Redirect to='/members' />
-    window.location.replace("/members");
-    // window.location.href="/members";
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
 
-    /*   API.findFamilyById(1)
-        .then(res =>
-            alert("data: "+JSON.stringify(res.data.familyname))
-     //     this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+    submitLogin(e) {
+        e.preventDefault();
+        //this should pass in what was entered on the form, but is not working.
+        const login = {"email": "herman.munster@scaryway.com"};
+        API.validateUser(login)
+            .then(res => {
+                let result = res.data.FamilyId;
+                //also store in session state if found
+                sessionStorage.setItem("familyId", result);
+                window.location.replace("/");
+            })
+            .catch(err => console.log(err));
+
+    };
+
+
+    render() {
+        return (
+            <div>
+                <div className="card">
+                    <div className="card-title">
+                        <h1>Staycare</h1>
+                        <hr />
+                        <h5>SIGN IN</h5>
+                    </div>
+                    <div className="card-body">
+                        <form className="form-signin">
+                            <div className="form-label-group">
+                                {/* <label id="label" htmlFor="email">Email Address:</label> */}
+                                <input className="form-control" type="email" name="email" value={this.state.email}
+                                    placeholder="Email Address" onChange={this.handleInputChange} required />
+                            </div>
+
+                            <div className="form-label-group">
+                                {/* <label id="label" htmlFor="password">Password:</label> */}
+                                <input className="form-control" type="password" name="password" value={this.state.password}
+                                    placeholder="Password" onChange={this.handleInputChange} required />
+                            </div>
+                            <button className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}>sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         )
-        .catch(err => console.log(err));
-    };*/
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="card">
-          <div className="card-title">
-            <h1>Staycare</h1>
-            <hr />
-            <h5>SIGN IN</h5>
-          </div>
-          <div className="card-body">
-            <form className="form-signin">
-              <div className="form-label-group">
-                {/* <label id="label" htmlFor="email">Email Address:</label> */}
-                <input
-                  className="form-control"
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                />
-              </div>
-              ​
-              <div className="form-label-group">
-                {/* <label id="label" htmlFor="password">Password:</label> */}
-                <input
-                  className="form-control"
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-md btn-primary btn-block text-uppercase"
-                onClick={this.submitLogin}
-              >
-                sign in
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    }
 }
 
 export default LoginBox;

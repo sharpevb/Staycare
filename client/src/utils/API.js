@@ -62,22 +62,20 @@ export default {
   // Saves a activity to the database
   addActivity: function (memberData) {
     return axios.post("/api/activity", memberData);
+  },
+
+  // get the activities associated with a child for specified date.  Sending in an object {"MemberId":"3", "activitydate":"2019-10-09"}
+  findActivityByChildId: function (id) {
+    return axios.get("/api/activity/child/" + JSON.stringify(id));
+  },
+  // get the activities associated with a child for specified date
+  findMembersByFamily: function (id) {
+    return axios.get("/api/member/family/" + id);
+  },
+//this will check the login credentials.  Sending in an object
+  validateUser: function (id) {
+    //alert("validate API "+JSON.stringify(id));
+    
+    return axios.get("/api/member/validate/"+ JSON.stringify(id));
   }
 };
-
-
-// //need where clause by family ID, add functionality in membercontroller
-// app.get("/", function (req, res) {    
-// db.Car.findAll(
-//   {
-//     include: [db.Customer],
-//     order: ["make", "model"],
-//     where: {
-//       sold: false
-//     }
-//   }).then(function (dbCars) {
-//     res.render("index", {
-//       cars: dbCars
-//     });
-//   });
-// });

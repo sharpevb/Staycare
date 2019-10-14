@@ -3,14 +3,13 @@ const db = require("../models");
 // Defining methods for the familyController
 module.exports = {
   findFamily: function (req, res) {
-    console.log('db.family')
     db.Family.findAll({})
       .then(dbFamily => res.json(dbFamily))
       .catch(err => res.status(422).json(err));
   },
   // add a new family
   createFamily: function (req, res) {
-    console.log("create family "+req.body)
+    console.log("create family "+JSON.stringify(req.body))
     db.Family.create(req.body).then(function (dbFamily) {
       res.json(dbFamily);
     });
@@ -18,7 +17,7 @@ module.exports = {
 
   // Update a family
   updateFamily: function (req, res) {
-    console.log('db.update '+req.body)
+    console.log('update family '+JSON.stringify(req.body))
     db.Family.update(req.body, {
       where: {
         id: req.params.id

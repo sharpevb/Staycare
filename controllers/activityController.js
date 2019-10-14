@@ -34,6 +34,18 @@ module.exports = {
     });
   },
 
+   // Find all activities for a child for a day
+   findActivityByChildId: function (req, res) {
+    console.log("findactivitybychild req id" +JSON.stringify(req.params.id));
+    var object_query = req.params.id;
+    db.Activity.findAll(
+      {where: JSON.parse(object_query),
+      order: ["activitycode", "time"]  
+    }).then(function (dbActivity) {
+      res.json(dbActivity);
+    });
+  },
+
   // Delete a activity by id
   deleteActivity: function (req, res) {
     db.Activity.destroy({ where: { id: req.params.id } }).then(function (dbActivity) {
