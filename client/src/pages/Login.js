@@ -3,10 +3,15 @@ import LoginBox from "../components/LoginBox/LoginBox";
 import Footer from "../components/Footer/Footer";
 
 class Login extends Component {
-  
+
   render() {
     return (
       <div>
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <a className="navbar-brand" href="#">
+            <i className="fas fa-home"></i> <span className="title">Staycare</span>
+          </a>
+        </nav>
         <div className="container-fluid">
           <div className="row">
             <div className="col-sm-9 col-md-7 col-lg-4 mx-auto">

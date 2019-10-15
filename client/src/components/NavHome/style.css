@@ -2,11 +2,21 @@
     background-color: cadetblue;;
 }
 
-.fa-home {
+.fa-home, .fa-sign-out-alt {
     font-size: 25px;
 }
 
 .title {
     font-size: 16pt;
     padding-left: 5px;
+}
+
+.nav-link {
+    font-size: 16pt;
+    color: black;
+    margin-left: -10px;
+}
+
+.nav-link:hover {
+    color: black;
 }

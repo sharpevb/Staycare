@@ -9,8 +9,15 @@ class DailyReport extends Component {
     feedings: "",
     naps: "",
     meds: "",
-    incidents: ""
+    incidents: "",
+    children: [],
+    error: "",
+    familyId: ""
   }
+
+// If provider, able to edit
+// If parent, unable to edit
+
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -27,8 +34,7 @@ class DailyReport extends Component {
                 <NavProfile />
                 <div className="container-fluid">
                     <ReportHeader />
-                    <ReportCard 
-                    />
+                    <ReportCard />
                 </div>
             </div>
     )

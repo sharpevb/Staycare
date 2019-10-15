@@ -5,13 +5,11 @@ import DailyReport from "./pages/DailyReport";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
-import NavHome from "../src/components/NavHome/NavHome";
 
 function App() {
   return (
     <Router>
       <div>
-        <NavHome />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/login" component={Login} />

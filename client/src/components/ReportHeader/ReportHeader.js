@@ -10,7 +10,8 @@ class DailyReport extends Component {
 }
 
 
-function ReportHeader() {
+function ReportHeader(props) {
+
 
     return (
         <div>
@@ -23,10 +24,10 @@ function ReportHeader() {
                             <img className="image" src="https://via.placeholder.com/150"></img>
                         </div>
                         <div className="col">
-                            <h1>Jimmy F.</h1>
+                            <h1>name:{props.name}</h1>
                             <div className="row">
                                 <div className="col-4">
-                                    <p>Date of Birth: 00/00/0000</p>
+                                    <p>Date of Birth: {props.dob}</p>
                                 </div>
                                 <div className="col-6">
                                     <p>Parent/Guardian(s): "Parent Name 1" and "Parent Name 2"</p>

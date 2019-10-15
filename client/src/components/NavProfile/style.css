@@ -2,11 +2,11 @@
     background-color: cadetblue;
 }
 
-.fa-home {
+.fa-home, .fa-child {
     font-size: 25px;
 }
 
-.title {
+.home {
     font-size: 16pt;
 }
 
