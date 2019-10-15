@@ -1,0 +1,21 @@
+.navbar {
+    background-color: cadetblue;
+}
+
+.fa-home {
+    font-size: 25px;
+}
+
+.title {
+    font-size: 16pt;
+}
+
+.nav-link {
+    font-size: 16pt;
+    color: black;
+    margin-left: -10px;
+}
+
+.nav-link:hover {
+    color: black;
+}

@@ -3,6 +3,7 @@ import LoginBox from "../components/LoginBox/LoginBox";
 import Footer from "../components/Footer/Footer";
 
 class Login extends Component {
+  
   render() {
     return (
       <div>

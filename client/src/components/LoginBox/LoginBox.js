@@ -20,7 +20,7 @@ class LoginBox extends Component {
     submitLogin(e) {
         e.preventDefault();
         //this should pass in what was entered on the form, but is not working.
-        const login = {"email": "herman.munster@scaryway.com"};
+        const login = { "email": "herman.munster@scaryway.com" };
         API.validateUser(login)
             .then(res => {
                 let result = res.data.FamilyId;
@@ -34,32 +34,30 @@ class LoginBox extends Component {
 
 
     render() {
-        return (
-            <div>
-                <div className="card">
-                    <div className="card-title">
-                        <h1>Staycare</h1>
-                        <hr />
-                        <h5>SIGN IN</h5>
-                    </div>
+        return (  
                     <div className="card-body">
-                        <form className="form-signin">
-                            <div className="form-label-group">
-                                {/* <label id="label" htmlFor="email">Email Address:</label> */}
-                                <input className="form-control" type="email" name="email" value={this.state.email}
-                                    placeholder="Email Address" onChange={this.handleInputChange} required />
-                            </div>
+                        <div className="card-title">
+                            <h1>Staycare</h1>
+                            <hr />
+                            <h5>SIGN IN</h5>
+                        </div>
+                        <div className="card-text">
+                            <form className="form-signin">
+                                <div className="form-label-group">
+                                    {/* <label id="label" htmlFor="email">Email Address:</label> */}
+                                    <input className="form-control" type="email" name="email" value={this.state.email}
+                                        placeholder="Email Address" onChange={this.handleInputChange} required />
+                                </div>
 
-                            <div className="form-label-group">
-                                {/* <label id="label" htmlFor="password">Password:</label> */}
-                                <input className="form-control" type="password" name="password" value={this.state.password}
-                                    placeholder="Password" onChange={this.handleInputChange} required />
-                            </div>
-                            <button className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}>sign in</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                                <div className="form-label-group">
+                                    {/* <label id="label" htmlFor="password">Password:</label> */}
+                                    <input className="form-control" type="password" name="password" value={this.state.password}
+                                        placeholder="Password" onChange={this.handleInputChange} required />
+                                </div>
+                                <button className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}>sign in</button>
+                            </form>
+                        </div>
+                    </div> 
         )
     }
 }
