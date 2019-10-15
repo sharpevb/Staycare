@@ -1,13 +1,23 @@
 import React, { Component } from "react"
+import NavProfile from "../components/NavProfile/NavProfile";
+import ReportHeader from "../components/ReportHeader/ReportHeader";
+import ReportCard from "../components/ReportCard/ReportCard";
 
-class UpdateDailyLog extends Component {
+class DailyReport extends Component {
   state = {
     diapers: "",
     feedings: "",
     naps: "",
     meds: "",
-    incidents: ""
+    incidents: "",
+    children: [],
+    error: "",
+    familyId: ""
   }
+
+// If provider, able to edit
+// If parent, unable to edit
+
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -20,18 +30,15 @@ class UpdateDailyLog extends Component {
 
   render() {
     return (
-      <div>
-        <form>
-        <input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers">Diaper Change: </input>
-        <input id="" value={this.state.feedings} onChange={this.handleInputChange} name="feedings">Feeding: </input>
-        <input id="" value={this.state.naps} onChange={this.handleInputChange} name="naps">Naps: </input>
-        <input id="" value={this.state.meds} onChange={this.handleInputChange} name="meds">Medications administered: </input>
-        <input id="" value={this.state.incidents} onChange={this.handleInputChange} name="incidents">Incidents: </input>
-        </form>
-         
-      </div>
+      <div className="header-info">
+                <NavProfile />
+                <div className="container-fluid">
+                    <ReportHeader />
+                    <ReportCard />
+                </div>
+            </div>
     )
   }
 }
 
-export default UpdateDailyLog;
+export default DailyReport;

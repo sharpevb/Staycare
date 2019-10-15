@@ -1,0 +1,12 @@
+body, html, .row {
+    background-color: white;
+}
+
+#banner-row {
+    padding-top: 30px;
+    
+}
+
+.col, h1 {
+    text-align: left;
+}
