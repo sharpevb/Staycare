@@ -16,7 +16,7 @@ function ReportCard(props) {
     // }
 
 
-{/* <div>
+    {/* <div>
         <form>
         <input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers">Diaper Change: </input>
         <input id="" value={this.state.feedings} onChange={this.handleInputChange} name="feedings">Feeding: </input>
@@ -37,12 +37,34 @@ function ReportCard(props) {
             <div className="row">
                 <form>
                     {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> */}
+                    <div className="col">
+                        <label>Diaper Change: </label> <input id="" name="diapers" placeholder="time"></input>
+                    </div>
 
-                    <label>Diaper Change</label><p><input id="" name="diapers" placeholder="time"></input></p>
-                    <label>Food: </label><input id="" name="feedings"></input>
-                    <label>Sleep: </label><input id="" name="diapers" placeholder="time"></input> to <input id="" name="diapers" placeholder="time"></input>
-                    <label>Medications administered: </label><input id="" name="meds"></input>
-                    <label>Incidents: </label><input id="" name="incidents"></input>
+                    <div className="col">
+                        <label>Food: </label> 
+                        <div className="btn-group">
+                             <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Meals </button>
+                            <div className="dropdown-menu">
+                                <a className="dropdown-item" href="#">Action</a>
+                                <a className="dropdown-item" href="#">Another action</a>
+                                <a className="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div> <input id="" name="feedings"></input>
+                    </div>
+
+                    <div className="col">
+                        <label>Sleep: </label> <input id="" name="diapers" placeholder="time"></input> to <input id="" name="diapers" placeholder="time"></input>
+                    </div>
+
+                    <div className="col">
+                        <label>Medications administered: </label> <input id="" name="meds"></input>
+                    </div>
+
+                    <div className="col">
+                        <label>Incidents: </label> <input id="" name="incidents"></input>
+                    </div>
                 </form>
             </div>
 
