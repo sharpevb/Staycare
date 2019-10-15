@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import "./style.css";
 
 
-class DailyReport extends Component { 
-
-
-
+// class DailyReport extends Component { 
     
-}
+// }
 
 
 function ReportHeader(props) {
@@ -15,13 +12,12 @@ function ReportHeader(props) {
 
     return (
         <div>
-
             <div className="header-info">
                 <div className="container-fluid">
                     <div className="row" id="banner-row">
 
                         <div className="col-2">
-                            <img className="image" src="https://via.placeholder.com/150"></img>
+                            <img className="image" src={props.image}></img>
                         </div>
                         <div className="col">
                             <h1>name:{props.name}</h1>
@@ -30,15 +26,15 @@ function ReportHeader(props) {
                                     <p>Date of Birth: {props.dob}</p>
                                 </div>
                                 <div className="col-6">
-                                    <p>Parent/Guardian(s): "Parent Name 1" and "Parent Name 2"</p>
+                                    <p>Parent/Guardian(s): {props.member}</p>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-4">
-                                    <p>Allergies: Lactose Intolerant</p>
+                                    <p>Allergies: {props.allergies}</p>
                                 </div>
                                 <div className="col-3">
-                                    <p>Phone: 000-000-0000</p>
+                                    <p>Phone: {props.primaryphone}</p>
                                 </div>
                             </div>
                         </div>
