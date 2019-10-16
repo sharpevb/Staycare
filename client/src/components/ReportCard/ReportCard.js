@@ -1,11 +1,91 @@
-import React from "react";
+import React, { Component } from "react";
+import API from "../../utils/API";
 import "./style.css";
 
 
-function ReportCard(props) {
+class ReportCard extends Component {
+
+state = {
+    activitycode: ""
+}
+
+componentDidMount() {
+    API.findActivityById(1)
+    .then(res => {
+        let activity = {
+            id: res.data.id,
+            activitycode: res.data.activitycode,
+        };
+        this.setState({activtycode: activity});
+        console.log(activity);
+    })
+};
+
+    // onFocus={this.onFocus}
+// onBlur={this.onBlur}
+
+onBlur() {
+    API.updateActivity()
+}
+
+    render() {
+        return (
+            <div className="container-fluid" id="daily-report">
+                <div className="row">
+                    <h1>Daily Report</h1>
+                </div>
+
+                <div className="row">
+                    <form>
+                        {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> */}
+                        <div className="col">
+                            <label>Diaper Change: </label> <input id="" name="diapers" placeholder="time"></input>
+                        </div>
+
+                        <div className="col">
+                            <label>Food: </label>
+                            <div className="btn-group">
+                                <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Meals </button>
+                                <div className="dropdown-menu">
+                                    <a className="dropdown-item" href="#">Action</a>
+                                    <a className="dropdown-item" href="#">Another action</a>
+                                    <a className="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div> <input id="" name="feedings"></input>
+                        </div>
+
+                        <div className="col">
+                            <label>Sleep: </label> <input id="" name="diapers" placeholder="time"></input> to <input id="" name="diapers" placeholder="time"></input>
+                        </div>
+
+                        <div className="col">
+                            <label>Medications administered: </label> <input id="" name="meds"></input>
+                        </div>
+
+                        <div className="col">
+                            <label>Incidents: </label> <input id="" name="incidents"></input>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        )
+    }
 
 
-    // handleInputChange = (event) => {
+
+}
+
+export default ReportCard;
+
+
+
+
+
+
+// handleInputChange = (event) => {
     //     const target = event.target;
     //     const value = target.value;
     //     const name = target.name;
@@ -16,7 +96,7 @@ function ReportCard(props) {
     // }
 
 
-    {/* <div>
+    /* <div>
         <form>
         <input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers">Diaper Change: </input>
         <input id="" value={this.state.feedings} onChange={this.handleInputChange} name="feedings">Feeding: </input>
@@ -25,55 +105,4 @@ function ReportCard(props) {
         <input id="" value={this.state.incidents} onChange={this.handleInputChange} name="incidents">Incidents: </input>
         </form>
          
-      </div> */}
-
-
-    return (
-        <div className="container-fluid" id="daily-report">
-            <div className="row">
-                <h1>Daily Report</h1>
-            </div>
-
-            <div className="row">
-                <form>
-                    {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> */}
-                    <div className="col">
-                        <label>Diaper Change: </label> <input id="" name="diapers" placeholder="time"></input>
-                    </div>
-
-                    <div className="col">
-                        <label>Food: </label> 
-                        <div className="btn-group">
-                             <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Meals </button>
-                            <div className="dropdown-menu">
-                                <a className="dropdown-item" href="#">Action</a>
-                                <a className="dropdown-item" href="#">Another action</a>
-                                <a className="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div> <input id="" name="feedings"></input>
-                    </div>
-
-                    <div className="col">
-                        <label>Sleep: </label> <input id="" name="diapers" placeholder="time"></input> to <input id="" name="diapers" placeholder="time"></input>
-                    </div>
-
-                    <div className="col">
-                        <label>Medications administered: </label> <input id="" name="meds"></input>
-                    </div>
-
-                    <div className="col">
-                        <label>Incidents: </label> <input id="" name="incidents"></input>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-
-    )
-
-
-
-}
-
-export default ReportCard;
+      </div> */
