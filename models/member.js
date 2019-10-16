@@ -34,7 +34,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
+    password: {
+      type: DataTypes.BLOB,
+      allowNull: true
+    }
   });
 
   Member.associate = function(models) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
-import DailyReport from "./pages/DailyReport";
+import DailyReport from "./pages/Dailyreport";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
