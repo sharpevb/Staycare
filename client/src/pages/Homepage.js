@@ -11,14 +11,14 @@ class Search extends Component {
     familyId: ""
   };
 
-  // When the component mounts, get a list of all available base breeds and update this.state.breeds
+   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
     //store the family ID in session state on login
 
     //sessionStorage.setItem("familyId",1);
     const loggedIn = sessionStorage.getItem("familyId");
    
-    console.log("state familyId : "+loggedIn)
+    //console.log("state familyId : "+loggedIn)
     //if family id = 0 then it's a provider   
     if (loggedIn === 0) {
       API.findMembers()
@@ -54,13 +54,6 @@ class Search extends Component {
     }
   }
 
-
- /* handleClicked(id) {
-    window.location.replace("/profile");
-    //this.setState({ search: event.target.value });
-  };*/
-
-
   render() {
     return (
       <div>
@@ -79,7 +72,6 @@ class Search extends Component {
               key={child.id}
               name={child.name}
               image={child.image}
-           //   onClick={this.handleClicked(child.id)}
             />
           ))}
 

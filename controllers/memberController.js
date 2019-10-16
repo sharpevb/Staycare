@@ -17,7 +17,7 @@ module.exports = {
 
   // Update a member
   updateMember: function (req, res) {
-    console.log('db.update '+req.body)
+    console.log('db.update ' + req.body)
     db.Member.update(req.body, {
       where: {
         id: req.params.id
@@ -29,7 +29,8 @@ module.exports = {
 
   // Find One member
   findMemberById: function (req, res) {
-    db.Member.findOne({where: {id: req.params.id}    
+    db.Member.findOne({
+      where: { id: req.params.id }
     }).then(function (dbMember) {
       res.json(dbMember);
     });
@@ -42,25 +43,30 @@ module.exports = {
     });
   },
   //passing in the family id to get the associated children
-  findMembersByFamily:  function (req, res) {
-    console.log("findmembersbyfamily req id" +JSON.stringify(req.params.id));
+  findMembersByFamily: function (req, res) {
+    console.log("findmembersbyfamily req id" + JSON.stringify(req.params.id));
     db.Member.findAll({
       include: [db.Family],
-      where: {FamilyId: req.params.id},
+      where: { FamilyId: req.params.id },
       order: ["membertype", "name"]
     }).then(function (dbMember) {
       res.json(dbMember);
     });
   },
-  validateUser:  function (req, res) {
-//an object is passed in as the id for the where clause.  Should be email and password when we add password.
-    var object_query = req.params.id;
-    //console.log("validate req params " +JSON.stringify(req.params.id));
+
+  //validate that the email and password credentials are correct.
+  validateUser: function (req, res) {
+    //an object is passed in as the id for the where clause.  Should be email (lowercase)and password when we add password.
+    var object_query = JSON.parse(req.params.id);
+    var v_email = object_query.email;
+    var v_password = object_query.password;
+//this will encrypt the password entered for comparison.
     db.Member.findOne({
       attributes: ["FamilyId"],
-      where: JSON.parse(object_query)
+      where: {password: db.sequelize.fn('aes_encrypt', v_password, 'fullstack'), email: v_email}
     }).then(function (dbMember) {
-      res.json(dbMember);
+      console.log("dbmembr "+JSON.stringify(dbMember));
+      res.json(JSON.stringify(dbMember));
     });
   }
 };
