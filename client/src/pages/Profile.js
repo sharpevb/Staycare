@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Footer from "../components/Footer/Footer"
+import Footer from "../components/Footer/Footer";
 
 class Profile extends Component {
   state = {
@@ -12,15 +12,19 @@ class Profile extends Component {
       email: "email",
       dob: "dob",
       phone: "phone",
-      textaddress: "textaddress",
+      // textaddress: "textaddress",
       allergies: "allergies",
       medication: "medication",
       image: "image"
-      //FROM FAMILY TABLE
-      // familyname: "familyname",
-      // primaryphone: "primaryphone",
-      // address1: "address1",
-      // address2: "address2",
+    },
+    familyProfile: {
+      id: "id",
+      familyname: "familyname",
+      primaryphone: "primaryphone",
+      address1: "address1",
+      address2: "address2",
+      createdAt: "createdAt",
+      updatedAt: "updatedAt"
     }
   };
 
@@ -31,9 +35,7 @@ class Profile extends Component {
   loadProfile = () => {
     API.findMemberById(1)
       .then(res => {
-        console.log(res);
         let profile = {
-          //THESE VALUES MUST MATCH THE FIELDS IN THE DATABASE
           id: res.data.id,
           name: res.data.name,
           membertype: res.data.membertype,
@@ -45,108 +47,152 @@ class Profile extends Component {
           medication: res.data.medication,
           image: res.data.image,
           familyname: res.data
-        }
-        // API.findFamilyById(1)
-        // .then(res => {
-        //     let familyprofile = {
-        //     //FAMILY PROFILE, SET STATE
-        //     this.setState({ profile: profile, familyProfile: familyProfile });
-        //     })        // API.findFamilyById(1)
-        // .then(res => {
-        //     let familyprofile = {
-        //     //FAMILY PROFILE, SET STATE
-        //     this.setState({ profile: profile, familyProfile: familyProfile });
-        //     })
+        };
+        this.setState({ profile: profile });
+      })
+      .catch(err => console.log(err));
+
+    API.findFamilyById(1)
+      .then(res => {
+        console.log(res);
+        let familyProfile = {
+          id: res.data.id,
+          familyname: res.data.familyname,
+          primaryphone: res.data.primaryphone,
+          address1: res.data.address1,
+          address2: res.data.address2,
+          createdAt: res.data.createdAt,
+          updatedAt: res.data.updatedAt
+        };
+
+        this.setState({ familyProfile: familyProfile });
+        console.log(familyProfile);
       })
       .catch(err => console.log(err));
   };
 
   render() {
-    // const studentRecords = this.state.profile;
     return (
       <div>
-        <form>
-          <label htmlFor="id">id: </label>
-          <input
-            type="text"
-            id="id"
-            name="id"
-            value={this.state.profile.id}
-          ></input>
-          <br></br>
-          <label htmlFor="name">name: </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={this.state.profile.name}
-          ></input>
-          <br></br>
-          <label htmlFor="membertype">membertype: </label>
-          <input
-            type="text"
-            id="membertype"
-            name="membertype"
-            value={this.state.profile.membertype}
-          ></input>
-          <br></br>
-          <label htmlFor="email">email: </label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={this.state.profile.email}
-          ></input>
-          <br></br>
-          <label htmlFor="dob">dob: </label>
-          <input
-            type="text"
-            id="dob"
-            name="dob"
-            value={this.state.profile.dob}
-          ></input>
-          <br></br>
-          <label htmlFor="phone">phone: </label>
-          <input
-            type="number"
-            id="phone"
-            name="phone"
-            value={this.state.profile.phone}
-          ></input>
-          <br></br>
-          <label htmlFor="textaddress">textaddress: </label>
-          <input
-            type="text"
-            id="textaddress"
-            name="textaddress"
-            value={this.state.profile.textaddress}
-          ></input>
-          <br></br>
-          <label htmlFor="allergies">allergies: </label>
-          <input
-            type="text"
-            id="allergies"
-            name="allergies"
-            value={this.state.profile.allergies}
-          ></input>
-          <br></br>
-          <label htmlFor="medication">medication: </label>
-          <input
-            type="text"
-            id="medication"
-            name="medication"
-            value={this.state.profile.medication}
-          ></input>
-          <br></br>
-          <label htmlFor="image">image: </label>
-          <input
-            type="text"
-            id="image"
-            name="image"
-            value={this.state.profile.image}
-          ></input>
-          <br></br>
-        </form>
+        <div>
+          <form>
+            <label htmlFor="id">id: </label>
+            <input
+              type="text"
+              id="id"
+              name="id"
+              value={this.state.profile.id}
+            ></input>
+            <br></br>
+            <label htmlFor="name">name: </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={this.state.profile.name}
+            ></input>
+            <br></br>
+            <label htmlFor="membertype">membertype: </label>
+            <input
+              type="text"
+              id="membertype"
+              name="membertype"
+              value={this.state.profile.membertype}
+            ></input>
+            <br></br>
+            <label htmlFor="email">email: </label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={this.state.profile.email}
+            ></input>
+            <br></br>
+            <label htmlFor="dob">dob: </label>
+            <input
+              type="text"
+              id="dob"
+              name="dob"
+              value={this.state.profile.dob}
+            ></input>
+            <br></br>
+            <label htmlFor="phone">phone: </label>
+            <input
+              type="number"
+              id="phone"
+              name="phone"
+              value={this.state.profile.phone}
+            ></input>
+            <br></br>
+            <label htmlFor="textaddress">textaddress: </label>
+            <input
+              type="text"
+              id="textaddress"
+              name="textaddress"
+              value={this.state.profile.textaddress}
+            ></input>
+            <br></br>
+            <label htmlFor="allergies">allergies: </label>
+            <input
+              type="text"
+              id="allergies"
+              name="allergies"
+              value={this.state.profile.allergies}
+            ></input>
+            <br></br>
+            <label htmlFor="medication">medication: </label>
+            <input
+              type="text"
+              id="medication"
+              name="medication"
+              value={this.state.profile.medication}
+            ></input>
+            <br></br>
+            <label htmlFor="image">image: </label>
+            <input
+              type="text"
+              id="image"
+              name="image"
+              value={this.state.profile.image}
+            ></input>
+            <br></br>
+          </form>
+        </div>
+        <div>
+          <form>
+            <label htmlFor="familyname">Family Name: </label>
+            <input
+              type="text"
+              id="familyname"
+              name="familyname"
+              value={this.state.familyProfile.familyname}
+            ></input>
+            <br></br>
+            <label htmlFor="primaryphone">Primary Phone: </label>
+            <input
+              type="number"
+              id="primaryphone"
+              name="primaryphone"
+              value={this.state.familyProfile.primaryphone}
+            ></input>
+            <br></br>
+            <label htmlFor="address1">Primary Address: </label>
+            <input
+              type="text"
+              id="address1"
+              name="address1"
+              value={this.state.familyProfile.address1}
+            ></input>
+            <br></br>
+            <label htmlFor="address2">Secondary Address: </label>
+            <input
+              type="text"
+              id="address2"
+              name="address2"
+              value={this.state.familyProfile.address2}
+            ></input>
+          </form>
+        </div>
         <Footer />
       </div>
     );
