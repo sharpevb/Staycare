@@ -44,6 +44,7 @@ module.exports = function(sequelize, DataTypes) {
   Member.associate = function(models) {
     // We're saying that a Car should belong to an Customer
     Member.belongsTo(models.Family, {
+      onDelete: 'cascade',
       foreignKey: {
         allowNull: false
       }
@@ -51,3 +52,15 @@ module.exports = function(sequelize, DataTypes) {
   };
   return Member;
 };
+
+// //COPIED FROM ONLINE
+// module.exports = function(sequelize, DataTypes) {
+//   var Category = sequelize.define('Category', {
+//     name: { type: DataTypes.STRING, allowNull: false }
+//   }, {
+//     associate: function(models) {
+//       Category.hasMany(models.Product, { onDelete: 'cascade' });
+//     }
+//   });
+//   return Category
+// }

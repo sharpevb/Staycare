@@ -15,7 +15,15 @@ module.exports = function(sequelize, DataTypes) {
     address2: {
       type: DataTypes.STRING,
       allowNull: true
-    }
+    },
+    // associate: function(models) {
+    //   Family.hasMany(models.Member, {
+    //     foreignKey: {
+    //       allowNull: false
+    //     },
+    //     onDelete: "cascade"
+    //   });
+    // }
   });
 
   return Family;

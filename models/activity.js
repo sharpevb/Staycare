@@ -25,6 +25,7 @@ module.exports = function(sequelize, DataTypes) {
   Activity.associate = function(models) {
     // We're saying that a Car should belong to an Customer
     Activity.belongsTo(models.Member, {
+      onDelete: 'cascade',
       foreignKey: {
         allowNull: false
       }
