@@ -7,16 +7,17 @@ function DRdiaper(props) {
 
     return (
         <div className="row" id="container">
-            <div className="col-1">
+            <div className="col-2">
                 <label>Bathroom:</label>
-                <p>Add </p>
+                <p>
+                <button className="w3-button w3-circle w3-green w3-small">+</button> <button className="w3-button w3-circle w3-red w3-small">-</button></p>
             </div>
 
-            <div className="col col-1">
+            <div className="col col-2">
                 <input className="form-control" name="diapers" placeholder="time"></input>
             </div>
 
-            <div className="col col-6">
+            <div className="col col-7">
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
                     <label className="form-check-label" for="exampleRadios1">

@@ -7,11 +7,12 @@ function DRfood() {
 
     return (
         <div className="row" id="container">
-            <div className="col-1">
+            <div className="col-2">
                 <label>Food: </label>
+                <p><button className="w3-button w3-circle w3-green w3-small">+</button> <button className="w3-button w3-circle w3-red w3-small">-</button></p>
              </div>   
 
-             <div className="col-2">
+             <div className="col-3">
                 <select className="form-control form-control-sm" id="meals">
                     <option>Meals</option>
                     <option>This is a long food meal</option>

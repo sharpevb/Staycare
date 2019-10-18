@@ -3,6 +3,8 @@ import DRtitle from "../DR_title/DRtitle";
 import DRdiaper from "../DR_diaper/DRdiaper";
 import DRfood from "../DR_food/DRfood";
 import DRsleep from "../DR_sleep/DRsleep";
+import DRmeds from "../DR_meds/DRmeds";
+import DRnotes from "../DR_notes/DRnotes"
 import API from "../../utils/API";
 import "./style.css";
 
@@ -77,6 +79,8 @@ componentDidMount() {
             <div className="container-fluid" id="daily-report">
                 <DRtitle />
                 <div className="row">
+                <div className="col col-8">
+                <div className="row">
                     {/* <form> */}
                         {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> <input id="" name="diapers" placeholder="time"></input>  */}
                         <div className="col-12">
@@ -87,29 +91,22 @@ componentDidMount() {
                             <DRfood />
                         </div>                    
 
-                        <div className="col-12">
+                        <div className="col-4">
                             <DRsleep />
                         </div>
 
-                        <div className="col">
-                            <label>Medications administered: </label> <input id="" name="meds"></input>
+                        <div className="col-6">
+                            <DRmeds />
                         </div>
 
-                        <div className="col">
-                            <label>Incidents: </label> <input id="" name="incidents"></input>
-                        </div>
-
-                        <div className="col">
-                        <div className="input-group">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">With textarea</span>
-                            </div>
-                            <textarea className="form-control" aria-label="With textarea"></textarea>
-</div>
-</div>
+    
                     {/* </form> */}
                 </div>
-
+            </div>
+            <div className="col col-4">
+                <DRnotes />
+            </div>
+            </div>
             </div>
 
         )
