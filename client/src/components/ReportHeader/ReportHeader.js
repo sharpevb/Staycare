@@ -35,13 +35,13 @@ class ReportHeader extends Component {
 
                 };
                 this.setState({ kid: kid })
-            })
-            .catch(err => console.log(err));
+            });
+            //.catch(err => console.log(err));
 
-            // Family members and info
+            // Family members and their info
             API.findMembersByFamily(1)
             .then(res => {
-                console.log(res)
+                //console.log(res)
                 let familyProfile = {
                     child1: res.data[0].name,
                     parent1: res.data[1].name,
@@ -50,9 +50,9 @@ class ReportHeader extends Component {
                     primaryphone: res.data[1].phone
                 };
                 this.setState({familyProfile: familyProfile});
-                console.log(familyProfile);
+                //console.log(familyProfile);
             })
-    
+            //.catch(err => console.log(err));
 
     }
 
@@ -64,7 +64,7 @@ class ReportHeader extends Component {
                     <div className="container-fluid">
                         <div className="row" id="banner-row">
 
-                            <div className="col-2">
+                            <div className="col-3">
                                 <img className="image" alt={this.state.kid.image} src={this.state.kid.image}></img>
                             </div>
                             <div className="col">

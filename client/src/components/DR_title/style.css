@@ -1,0 +1,11 @@
+#container {
+    padding-bottom: 30px;
+}
+
+#dr-title.col {
+    display: block;
+}
+
+.form-control {
+    height: 15px;
+}

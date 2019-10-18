@@ -13,15 +13,16 @@ class Login extends Component {
           </a>
         </nav>
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-sm-9 col-md-7 col-lg-4 mx-auto">
-              <div className="box-container">
+          <div className="row" style={{backgroundColor: "cadetblue"}}>
+            <div className="col-sm-9 col-md-7 col-lg-4 mx-auto" >
+              <div className="box-container" >
                 <LoginBox />
               </div>
             </div>
-          </div>
+          </div> 
         </div>
         <Footer />
+        
       </div>
     );
   }
