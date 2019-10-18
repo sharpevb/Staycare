@@ -2,21 +2,29 @@ import React, { Component } from "react"
 import NavProfile from "../components/NavProfile/NavProfile";
 import ReportHeader from "../components/ReportHeader/ReportHeader";
 import ReportCard from "../components/ReportCard/ReportCard";
+//import API from "../utils/API";
+import Footer from "../components/Footer/Footer";
 
 class DailyReport extends Component {
-  state = {
-    diapers: "",
-    feedings: "",
-    naps: "",
-    meds: "",
-    incidents: "",
-    children: [],
-    error: "",
-    familyId: ""
-  }
 
 // If provider, able to edit
 // If parent, unable to edit
+
+componentDidMount() {
+  // API.findFamilyById(1)
+  // .then(res => {
+  //   let reportheader = {
+  //     id: res.data.id,
+  //     name: res.data.name,
+  //     dob: res.data.dob,
+  //     allergies: res.data.allergies,
+  //     medication: res.data.medication,
+  //     primaryphone: res.data.primaryphone
+  //   };
+  //   this.setState({reportheader: reportheader})
+  // })
+  // .catch(err => console.log(err));
+}
 
   handleInputChange = (event) => {
     const target = event.target;
@@ -36,6 +44,7 @@ class DailyReport extends Component {
                     <ReportHeader />
                     <ReportCard />
                 </div>
+                <Footer />
             </div>
     )
   }
