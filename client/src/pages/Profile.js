@@ -77,7 +77,7 @@ class Profile extends Component {
 
 deleteFamily = id => {
   API.deleteFamily(id)
-  .then(res => this.findFamilyById(1))
+  .then(res => this.findFamilyById(id))
   .catch(err => console.log(err));
 }
 
