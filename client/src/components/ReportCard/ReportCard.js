@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DRtitle from "../DR_title/DRtitle";
 import DRdiaper from "../DR_diaper/DRdiaper";
 import DRfood from "../DR_food/DRfood";
+import DRsleep from "../DR_sleep/DRsleep";
 import API from "../../utils/API";
 import "./style.css";
 
@@ -84,11 +85,10 @@ componentDidMount() {
 
                         <div className="col-12">
                             <DRfood />
-                        </div>
-                        
+                        </div>                    
 
-                        <div className="col">
-                            <label>Sleep: </label> <input id="" name="diapers" placeholder="time"></input> to <input id="" name="diapers" placeholder="time"></input>
+                        <div className="col-12">
+                            <DRsleep />
                         </div>
 
                         <div className="col">
@@ -98,6 +98,15 @@ componentDidMount() {
                         <div className="col">
                             <label>Incidents: </label> <input id="" name="incidents"></input>
                         </div>
+
+                        <div className="col">
+                        <div className="input-group">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text">With textarea</span>
+                            </div>
+                            <textarea className="form-control" aria-label="With textarea"></textarea>
+</div>
+</div>
                     {/* </form> */}
                 </div>
 

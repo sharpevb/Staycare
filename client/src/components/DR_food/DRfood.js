@@ -1,7 +1,5 @@
 import React from "react";
-
-
-
+import "./style.css";
 
 
 
@@ -9,14 +7,14 @@ function DRfood() {
 
     return (
         <div className="row" id="container">
-            <div className="col-2">
+            <div className="col-1">
                 <label>Food: </label>
              </div>   
 
-             <div className="col-3">
-                <select className="form-control form-control-sm">
+             <div className="col-2">
+                <select className="form-control form-control-sm" id="meals">
                     <option>Meals</option>
-                    <option>Food1</option>
+                    <option>This is a long food meal</option>
                     <option>Food2</option>
                 </select>
             </div>

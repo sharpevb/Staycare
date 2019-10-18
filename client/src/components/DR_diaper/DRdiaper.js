@@ -7,13 +7,13 @@ function DRdiaper(props) {
 
     return (
         <div className="row" id="container">
-            <div className="col col-2">
-                <label>Diaper Change: </label>
+            <div className="col-1">
+                <label>Bathroom:</label>
                 <p>Add </p>
             </div>
 
-            <div className="col col-3">
-                <input id="" value="time" name="diapers"></input>
+            <div className="col col-1">
+                <input className="form-control" name="diapers" placeholder="time"></input>
             </div>
 
             <div className="col col-6">
