@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import NavProfile from "../components/NavProfile/NavProfile";
 import Footer from "../components/Footer/Footer";
-import ProfileCard from "../components/ProfileCard/ProfileCard"
-import FamilyCard from "../components/FamilyProfileStatic/FamilyProfileStatic";
+import ProfileCardReadOnly from "../components/ProfileCard/ProfileCardReadOnly"
+import ProfileCardEdit from "../components/ProfileCard/ProfileCardEdit"
+import FamilyCardReadOnly from "../components/FamilyProfile/FamilyProfileReadOnly";
+import FamilyCardEdit from "../components/FamilyProfile/FamilyProfileEdit";
 
 class Profile extends Component {
   state = {
@@ -33,11 +35,11 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    this.loadProfile();
+    this.loadProfile(4);
   }
 
-  loadProfile = () => {
-    API.findMemberById(1)
+  loadProfile = (id) => {
+      API.findMemberById(id)
       .then(res => {
         let profile = {
           id: res.data.id,
@@ -52,26 +54,24 @@ class Profile extends Component {
           image: res.data.image,
           familyname: res.data.familyname
         };
-        this.setState({ profile: profile });
+        API.findFamilyById(res.data.FamilyId)
+        .then(res => {
+          console.log(res);
+          let familyProfile = {
+            id: res.data.id,
+            familyname: res.data.familyname,
+            primaryphone: res.data.primaryphone,
+            address1: res.data.address1,
+            address2: res.data.address2,
+            createdAt: res.data.createdAt,
+            updatedAt: res.data.updatedAt
+          };
+        this.setState({ profile: profile, familyProfile: familyProfile });
       })
       .catch(err => console.log(err));
+    })
 
-    API.findFamilyById(1)
-      .then(res => {
-        console.log(res);
-        let familyProfile = {
-          id: res.data.id,
-          familyname: res.data.familyname,
-          primaryphone: res.data.primaryphone,
-          address1: res.data.address1,
-          address2: res.data.address2,
-          createdAt: res.data.createdAt,
-          updatedAt: res.data.updatedAt
-        };
 
-        this.setState({ familyProfile: familyProfile });
-        console.log(familyProfile);
-      })
       .catch(err => console.log(err));
   };
 
@@ -82,34 +82,59 @@ deleteFamily = id => {
 }
 
   render() {
-    return (
-      <div>
-        <NavProfile />
-        <ProfileCard 
-        id={this.state.profile.id}
-        name={this.state.profile.name}
-        membertype={this.state.profile.membertype}
-        email={this.state.profile.email}
-        dob={this.state.profile.dob}
-        phone={this.state.profile.phone}
-        textaddress={this.state.profile.textaddress}
-        allergies={this.state.profile.allergies}
-        medication={this.state.profile.medication}
-        image={this.state.profile.image}
-        familyname={this.state.profile.familyname}
-        />
-        <FamilyCard 
-        id={this.state.familyProfile.id}
-        familyname={this.state.familyProfile.familyname}
-        image={this.state.familyProfile.image}
-        primaryphone={this.state.familyProfile.primaryphone}
-        address1={this.state.familyProfile.address1}
-        address2={this.state.familyProfile.address2}
-        deleteFamily={this.deleteFamily}
-        />
-        <Footer />
-      </div>
-    );
+    let editCard = 
+      <div><ProfileCardEdit 
+      id={this.state.profile.id}
+      name={this.state.profile.name}
+      membertype={this.state.profile.membertype}
+      email={this.state.profile.email}
+      dob={this.state.profile.dob}
+      phone={this.state.profile.phone}
+      textaddress={this.state.profile.textaddress}
+      allergies={this.state.profile.allergies}
+      medication={this.state.profile.medication}
+      image={this.state.profile.image}
+      familyname={this.state.profile.familyname}
+      />
+      <FamilyCardEdit
+      id={this.state.familyProfile.id}
+      familyname={this.state.familyProfile.familyname}
+      image={this.state.familyProfile.image}
+      primaryphone={this.state.familyProfile.primaryphone}
+      address1={this.state.familyProfile.address1}
+      address2={this.state.familyProfile.address2}
+      deleteFamily={this.deleteFamily}
+      /></div>;
+
+      let readCard = 
+      <div><ProfileCardReadOnly
+      id={this.state.profile.id}
+      name={this.state.profile.name}
+      membertype={this.state.profile.membertype}
+      email={this.state.profile.email}
+      dob={this.state.profile.dob}
+      phone={this.state.profile.phone}
+      textaddress={this.state.profile.textaddress}
+      allergies={this.state.profile.allergies}
+      medication={this.state.profile.medication}
+      image={this.state.profile.image}
+      familyname={this.state.profile.familyname}
+      />
+      <FamilyCardReadOnly
+      id={this.state.familyProfile.id}
+      familyname={this.state.familyProfile.familyname}
+      image={this.state.familyProfile.image}
+      primaryphone={this.state.familyProfile.primaryphone}
+      address1={this.state.familyProfile.address1}
+      address2={this.state.familyProfile.address2}
+      deleteFamily={this.deleteFamily}
+      /></div>;
+
+return (
+        <div><NavProfile />
+        {(this.state.familyProfile.familyname === 'Providers') ? editCard : readCard}
+        <Footer /></div>
+    )
   }
 }
 
