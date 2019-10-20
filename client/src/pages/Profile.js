@@ -3,7 +3,7 @@ import API from "../utils/API";
 import NavProfile from "../components/NavProfile/NavProfile";
 import Footer from "../components/Footer/Footer";
 import ProfileCard from "../components/ProfileCard/ProfileCard"
-import FamilyCard from "../components/FamilyCard/FamilyCard";
+import FamilyCard from "../components/FamilyProfileStatic/FamilyProfileStatic";
 
 class Profile extends Component {
   state = {
