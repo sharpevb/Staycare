@@ -5,8 +5,9 @@ module.exports = {
       "username": "root",
       "password": process.env.DB_PASSWORD,
       "database": "staycare",
-      "host": "localhost",
-      "dialect": "mysql"
+      "host": "public-scratch.cvwwn9esnrpn.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql",
+      "port": 3306
     },
     "test": {
       "username": "root",
