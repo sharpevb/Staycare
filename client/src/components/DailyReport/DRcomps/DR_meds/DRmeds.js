@@ -7,7 +7,7 @@ function DRmeds() {
     return (
 
         <div className="row" id="container">
-            <div className="col-4" id="med-section">
+            <div className="col-3" id="med-section">
             <label>Medications administered: </label> 
             </div>
             
@@ -17,7 +17,7 @@ function DRmeds() {
             <div className="col col-1">
             <div className="form-check form-check-inline">
                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                    <label className="form-check-label" for="exampleRadios1">
+                    <label className="form-check-label">
                         Administered</label>
                 </div>
         </div>

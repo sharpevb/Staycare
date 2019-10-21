@@ -33,7 +33,7 @@ class LoginBox extends Component {
                         console.log("res.data parse "+JSON.parse(res.data))
                         var result = JSON.parse(res.data).FamilyId;
                         //also store in session state if found
-                        if (result) {
+                        if (result >= 0) {
                             sessionStorage.setItem("familyId", result);
                             window.location.replace("/");
                         }
@@ -74,7 +74,7 @@ class LoginBox extends Component {
                             <input className="form-control" type="password" name="password" value={this.state.password}
                                 placeholder="Password" onChange={this.handleInputChange} required />
                         </div>
-                        <button className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}>sign in</button>
+                        <button id="login-button" className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}>sign in</button>
                     </form>
                 </div>
             </div>

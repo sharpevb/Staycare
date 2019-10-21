@@ -5,6 +5,7 @@ import DailyReport from "./pages/Dailyreport";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
           <Route exact path="/profile" component={Profile} />
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
       </div>
     </Router>
+    
   );
 }
 
