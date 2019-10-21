@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Activity.associate = function(models) {
-    // We're saying that a Car should belong to an Customer
+    // We're saying that an Activity should belong to a Member
     Activity.belongsTo(models.Member, {
       onDelete: 'cascade',
       foreignKey: {

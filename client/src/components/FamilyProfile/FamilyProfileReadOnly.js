@@ -1,6 +1,6 @@
 import React from "react";
 
-function FamilyCard(props) {
+function FamilyProfileReadOnly(props) {
   return (
     <div className="card">
       <div className="img-container">
@@ -33,4 +33,4 @@ function FamilyCard(props) {
   );
 }
 
-export default FamilyCard;
+export default FamilyProfileReadOnly;
