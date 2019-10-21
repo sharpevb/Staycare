@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import DRtitle from "../DR_title/DRtitle";
-import DRdiaper from "../DR_diaper/DRdiaper";
-import DRfood from "../DR_food/DRfood";
-import API from "../../utils/API";
+import DRtitle from "../DRcomps/DR_title/DRtitle";
+import DRdiaperRO from "../DRcomps/DR_diaper/DRdiaperRO";
+import DRfood from "../DRcomps/DR_food/DRfood";
+import DRsleep from "../DRcomps/DR_sleep/DRsleep";
+import DRmeds from "../DRcomps/DR_meds/DRmeds";
+import DRnotes from "../DRcomps/DR_notes/DRnotes";
+import DRbutton from "../DRcomps/DR_button/DRbutton";
+import API from "../../../utils/API";
 import "./style.css";
 
 
@@ -42,7 +46,7 @@ componentDidMount() {
             result2: res.data.result2
         };
         this.setState({activity: activity});
-        console.log(activity);
+        //console.log(activity);
     })
     //.catch(err => console.log(err));
     // API.findActivityByChildId(3)
@@ -76,31 +80,28 @@ componentDidMount() {
             <div className="container-fluid" id="daily-report">
                 <DRtitle />
                 <div className="row">
-                    {/* <form> */}
                         {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> <input id="" name="diapers" placeholder="time"></input>  */}
-                        <div className="col-12">
-                            <DRdiaper />
-                        </div>
+                            <div className="col-12">
+                                <DRdiaperRO />
+                            </div>
 
-                        <div className="col-12">
-                            <DRfood />
-                        </div>
-                        
+                            <div className="col-12">
+                                <DRfood />
+                            </div>                    
 
-                        <div className="col">
-                            <label>Sleep: </label> <input id="" name="diapers" placeholder="time"></input> to <input id="" name="diapers" placeholder="time"></input>
-                        </div>
+                            <div className="col-4">
+                                <DRsleep />
+                            </div>
 
-                        <div className="col">
-                            <label>Medications administered: </label> <input id="" name="meds"></input>
-                        </div>
+                            <div className="col-6">
+                                <DRmeds />
+                            </div>
 
-                        <div className="col">
-                            <label>Incidents: </label> <input id="" name="incidents"></input>
-                        </div>
-                    {/* </form> */}
+                            <div className="col col-4">
+                                <DRnotes />
+                                <DRbutton />
+                            </div>
                 </div>
-
             </div>
 
         )

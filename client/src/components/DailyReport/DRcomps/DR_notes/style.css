@@ -1,0 +1,12 @@
+
+#note-box {
+    height: 80px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: cadetblue;
+    color: white;
+}
+
+#text-box {
+    height: 200px;
+    border-radius: 0px 15px 15px 15px;
+}
