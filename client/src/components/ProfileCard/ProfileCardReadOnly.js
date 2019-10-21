@@ -10,34 +10,34 @@ function ProfileCardReadOnly(props) {
       <div className="content">
         <ul>
           <li>
-            <strong>READ:</strong><span style={{color:"red"}}>{props.name}</span>
+            <strong>EDIT:</strong> <input value={props.name} name="name" onChange={props.handleInputChange}/>
           </li>
           <li>
-            <strong>Location:</strong> {props.id}
+            <strong>ID:</strong> <input value={props.id} name="id" onChange={props.handleInputChange}/>
           </li>
           <li>
-            <strong>Occupation:</strong> {props.membertype}
+            <strong>Membertype:</strong> <input value={props.membertype} name="membertype" onChange={props.handleInputChange}/> 
           </li>
           <li>
-            <strong>email:</strong> {props.email}
+            <strong>email:</strong> <input value={props.email} name="email" onChange={props.handleInputChange}/> 
           </li>
           <li>
-            <strong>dob:</strong> {props.dob}
+            <strong>dob:</strong>  <input value={props.dob} name="dob" onChange={props.handleInputChange}/>
           </li>
           <li>
-            <strong>phone:</strong> {props.phone}
+            <strong>phone:</strong> <input value={props.phone} name="phone" onChange={props.handleInputChange}/> 
           </li>
           <li>
-            <strong>textaddress:</strong> {props.textaddress}
+            <strong>textaddress:</strong>  <input value={props.textaddress} name="textaddress" onChange={props.handleInputChange}/>
           </li>
           <li>
-            <strong>allergies:</strong> {props.allergies}
+            <strong>allergies:</strong>  <input value={props.allergies} name="allergies" onChange={props.handleInputChange}/>
           </li>
           <li>
-            <strong>medication:</strong> {props.medication}
+            <strong>medication:</strong>  <input value={props.medication} name="medication" onChange={props.handleInputChange}/>
           </li>
           <li>
-            <strong>familyname:</strong> {props.familyname}
+            <strong>familyname:</strong>  <input value={props.familyname} name="familyname" onChange={props.handleInputChange}/>
           </li>
         </ul>
       </div>

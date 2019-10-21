@@ -42,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Member.associate = function(models) {
-    // We're saying that a Car should belong to an Customer
+    // We're saying that a Member should belong to a Family
     Member.belongsTo(models.Family, {
       onDelete: 'cascade',
       foreignKey: {

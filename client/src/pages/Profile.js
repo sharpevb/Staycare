@@ -75,6 +75,34 @@ class Profile extends Component {
       .catch(err => console.log(err));
   };
 
+  handleInputChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+    console.log(value)
+    console.log(name)
+    this.setState({
+      profile: {
+            ...this.state.profile,
+            [name]: value
+      }
+  })
+}
+
+  handleInputChangeFamily = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+    console.log(value)
+    console.log(name)
+    this.setState({
+      familyProfile: {
+            ...this.state.familyProfile,
+            [name]: value
+      }
+  })
+  }
+
 deleteFamily = id => {
   API.deleteFamily(id)
   .then(res => this.findFamilyById(id))
@@ -95,6 +123,7 @@ deleteFamily = id => {
       medication={this.state.profile.medication}
       image={this.state.profile.image}
       familyname={this.state.profile.familyname}
+      handleInputChange={this.handleInputChange}
       />
       <FamilyCardEdit
       id={this.state.familyProfile.id}
@@ -104,6 +133,7 @@ deleteFamily = id => {
       address1={this.state.familyProfile.address1}
       address2={this.state.familyProfile.address2}
       deleteFamily={this.deleteFamily}
+      handleInputChangeFamily={this.handleInputChangeFamily}
       /></div>;
 
       let readCard = 
@@ -132,7 +162,7 @@ deleteFamily = id => {
 
 return (
         <div><NavProfile />
-        {(this.state.familyProfile.familyname === 'Providers') ? editCard : readCard}
+        {(this.state.familyProfile.familyname !== 'Providers') ? editCard : readCard}
         <Footer /></div>
     )
   }
