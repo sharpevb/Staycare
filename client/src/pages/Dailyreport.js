@@ -16,7 +16,7 @@ componentDidMount() {
 const loggedIn = parseInt(sessionStorage.getItem("familyId"));
 //if family id = 0 then it's a provider   
 if (loggedIn === 0) {
-  API.findMembers() //
+  API.findActivityByChildId(3) //
     .then(res => {
       if (res.data.status === "error") {
         throw new Error(res.data);

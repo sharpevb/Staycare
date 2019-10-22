@@ -1,9 +1,6 @@
-body, html, .row {
-    background-color: white;
-}
-
-.image {
+#image {
     position: relative;
+    margin: 0 auto;
 }
 #banner-row {
     padding-top: 30px;
