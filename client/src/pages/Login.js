@@ -7,7 +7,7 @@ class Login extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/login">
             <i className="fas fa-home"></i> <span className="title">Staycare</span>
           </a>
         </nav>

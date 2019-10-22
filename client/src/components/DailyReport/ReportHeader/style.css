@@ -6,7 +6,9 @@
     padding-top: 30px;
     
 }
-
 .col, h1 {
     text-align: left;
+}
+#provider-name {
+    text-align: right;
 }

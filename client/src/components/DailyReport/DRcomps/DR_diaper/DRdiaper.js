@@ -11,8 +11,8 @@ class DRdiaper extends Component {
         }
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         //this.handleChange = this.handleChange.bind(this);
         this.state = {
@@ -23,11 +23,25 @@ class DRdiaper extends Component {
                 time: "",
                 result1: "",
                 result2: ""
-            }
+            },
+
+            selectedOption: ""
+
+
         }
 
     }
 
+    handleOptionChange = (changeEvent) => {
+        this.setState({
+            selectedOption: changeEvent.target.value
+        });
+    };
+
+    handleFormSubmit = formSubmitEvent => {
+        formSubmitEvent.preventDefault();
+
+    }
     // handleSubmit(event) {
     //     event.preventDefault();
 
@@ -41,16 +55,6 @@ class DRdiaper extends Component {
     //   }
 
     addBathroom() {
-        // let bathbutton = document.getElementById("bathbutton");
-        // bathbutton.addEventListener("click", function() {
-        //     let bathroom = document.getElementById("bathroom");
-        //     let clone1 = bathroom.firstElementChild.cloneNode(true);
-        //     let clone = bathroom.lastElementChild.cloneNode(true);
-        //     bathroom.appendChild(clone1);
-        //     bathroom.appendChild(clone);
-
-        // })
-
         var itm = document.getElementById("bathroom").childNodes;
         for (var i = 0; i < itm.length; i++) {
             console.log(itm[i]);
@@ -58,18 +62,6 @@ class DRdiaper extends Component {
             document.getElementById("bathroom1").lastChild.appendChild(cln);
         }
     }
-
-    //  Attempt at delete functionality
-
-    // deleteBathroom() {
-    //         var itm = document.getElementById("bathroom").childNodes;
-    //         for (var i = 0; i < itm.length; i--) {
-    //             console.log(itm[i]);
-    //             var cln = itm[i].cloneNode(true);
-    //             document.getElementById("bathroom1").lastChild.appendChild(cln);
-    //         }
-
-    // }
 
     componentDidMount() {
 
@@ -81,8 +73,8 @@ class DRdiaper extends Component {
                     activitycode: res.data.activitycode,
                     activitydate: res.data.activitydate,
                     time: res.data.time,
-                    result1: res.data.result1,
-                    result2: res.data.result2
+                    selectedOption: res.data.result1,
+                    result2: res.data.result2,
                 };
                 this.setState({ activity: activity });
                 console.log(activity);
@@ -95,155 +87,48 @@ class DRdiaper extends Component {
     //API.updateActivity(id, memberData)
 
 
-    //{this.state.activity.time}
-
     render() {
         return (
-            <div className="row" id="container">
-                <p>
-                    <button onClick={this.addBathroom} className="w3-button w3-circle w3-green w3-small">+</button> 
-                    {/* <button onClick={this.deleteBathroom} className="w3-button w3-circle w3-red w3-small" id="bathbutton">-</button> */}
-                </p>
-                <div className="col-1">
-                    <label>Bathroom: </label>
-                </div>
-                
-                {/* Display none but contains info */}
-                <div className="row" id="bathroom" style={this.styles.div}>
-                    <div className="col-5">
-                        <input className="form-control" required></input>
+            <div className="container-fluid">
+                <div className="row" id="container">
+                    <p>
+                        <button onClick={this.addBathroom} className="w3-button w3-green w3-small">+</button>
+                    </p>
+                    <div className="col-2">
+                        <label>Bathroom: </label>
                     </div>
 
-                    <div className="col">
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio1"
-                                value="Wet"
-                                onChange={this.handleChange}
-                                checked={this.state.result1}
-                            />
-                            <label className="form-check-label">
-                                Wet </label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio2"
-                                value="BM"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">BM</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio3"
-                                value="Wet/BM"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">Wet/BM</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio4"
-                                value="Dry"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">Dry</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio5"
-                                value="Diarrhea"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">Diarrhea</label>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Append new entry */}
-                <div className="row" id="bathroom1">
-                    <div className="col-3">
-                        <input className="form-control" placeholder="13:00" required></input>
+                    {/* Display none but contains info */}
+                    <div className="row" id="bathroom" style={this.styles.div}>
+                            <div className="col">
+                                <input className="form-control" placeholder="13:00"></input>
+                            </div>    
+                            <br />
+                            <div className="col">
+                                <label>Type: <span id="examples">Wet, Dry, BM, Wet/BM, Diarrhea</span></label> <input className="form-control" />
+                            </div>
+                            
                     </div>
 
-                    <div className="col">
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio1"
-                                value="Wet"
-                                onChange={this.handleChange}
-                                checked={this.state.result1}
-                            />
-                            <label className="form-check-label">
-                                Wet </label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio2"
-                                value="BM"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">BM</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio3"
-                                value="Wet/BM"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">Wet/BM</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio4"
-                                value="Dry"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">Dry</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                id="inlineRadio5"
-                                value="Diarrhea"
-                                onChange={this.handleChange}
-                                checked={this.state.result1} />
-                            <label className="form-check-label">Diarrhea</label>
+                    {/* Append new entry */}
+                    <div className="row" id="bathroom1">
+                        <div className="form-check">
+                        <div className="col">
+                                <input className="form-control" placeholder="13:00"></input>
+                            </div>    
+                            <br />
+                            <div className="col">
+                                <label>Type: <span id="examples">Wet, Dry, BM, Wet/BM, Diarrhea</span></label> <input className="form-control" />
+                            </div>
+                            <hr />
                         </div>
                     </div>
                 </div>
             </div>
+
         )
     }
 
-
-
 }
-
 
 export default DRdiaper;

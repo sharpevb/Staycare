@@ -68,13 +68,6 @@ componentDidMount() {
 };
 
 
-    // onFocus={this.onFocus}
-// onBlur={this.onBlur}
-
-// onBlur() {
-//     API.updateActivity()
-// }
-
     render() {
         return (
             <div className="container-fluid" id="daily-report">

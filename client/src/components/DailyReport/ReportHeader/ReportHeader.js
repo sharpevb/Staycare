@@ -18,6 +18,9 @@ class ReportHeader extends Component {
             id: "",
             surname: "",
             primaryphone: "",
+        },
+        provider: {
+            name: "",
         }
     }
 
@@ -54,12 +57,22 @@ class ReportHeader extends Component {
             })
         //.catch(err => console.log(err));
 
+        API.findMembersByFamily(0)
+        .then(res => {
+            console.log(res)
+            let provider = {
+                name: res.data[0].name
+            };
+            this.setState({provider: provider});
+        })
+        .catch(err => console.log(err));
     }
 
 
     render() {
         return (
             <div className="container-fluid">
+                <p id="provider-name"><strong>Provider: </strong>{this.state.provider.name}</p>
                 <div className="row" id="banner-row">
 
                     <div className="image-wrapper">
@@ -72,7 +85,7 @@ class ReportHeader extends Component {
                             <div className="col-4">
                                 <p><strong>Date of Birth:</strong> {this.state.kid.dob}</p>
                             </div>
-                            <div className="col-6">
+                            <div className="col-8">
                                 <p><strong>Parent/Guardian(s): </strong>{this.state.familyProfile.parent1} {this.state.familyProfile.surname}, {this.state.familyProfile.parent2} {this.state.familyProfile.surname}</p>
                             </div>
                         </div>
@@ -80,7 +93,7 @@ class ReportHeader extends Component {
                             <div className="col-4">
                                 <p><strong>Allergies:</strong> {this.state.kid.allergies}</p>
                             </div>
-                            <div className="col-3">
+                            <div className="col-8">
                                 <p><strong>Phone: </strong>{this.state.familyProfile.primaryphone}</p>
                             </div>
                         </div>
