@@ -9,7 +9,7 @@ function NavProfile() {
       <i className="fas fa-home"></i> <span className="home">Staycare</span>
       </a>
         <a className="nav-link" href="/profile"><i className="fas fa-child"></i> <span>Profile</span></a>
-      <a className="nav-link" href="#"><i className="fas fa-sign-out-alt"></i> <span>Sign Out</span></a>
+      <a className="nav-link" href="/login"><i className="fas fa-sign-out-alt"></i> <span>Sign Out</span></a>
     </nav>
   );
 

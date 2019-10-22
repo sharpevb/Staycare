@@ -16,8 +16,8 @@ export default {
     return axios.delete("/api/member/" + id);
   },
   // Update the member with the given id
-  updateMember: function (id,memberData) {
-    return axios.put("/api/member/" + id,memberData);
+  updateMember: function (id, memberData) {
+    return axios.put("/api/member/" + id, memberData);
   },
   // Saves a member to the database
   addMember: function (memberData) {
@@ -36,8 +36,8 @@ export default {
     return axios.delete("/api/family/" + id);
   },
   // Update the family with the given id
-  updateFamily: function (id,memberData) {
-    return axios.put("/api/family/" + id,memberData);
+  updateFamily: function (id, memberData) {
+    return axios.put("/api/family/" + id, memberData);
   },
   // Saves a family to the database
   addFamily: function (memberData) {
@@ -56,8 +56,8 @@ export default {
     return axios.delete("/api/activity/" + id);
   },
   // Update the activity with the given id
-  updateActivity: function (id,memberData) {
-    return axios.put("/api/activity/" + id,memberData);
+  updateActivity: function (id, memberData) {
+    return axios.put("/api/activity/" + id, memberData);
   },
   // Saves a activity to the database
   addActivity: function (memberData) {
@@ -72,10 +72,26 @@ export default {
   findMembersByFamily: function (id) {
     return axios.get("/api/member/family/" + id);
   },
-//this will check the login credentials.  Sending in an object
+  //this will check the login credentials.  Sending in an object
   validateUser: function (id) {
     //alert("validate API "+JSON.stringify(id));
-    
-    return axios.get("/api/member/validate/"+ JSON.stringify(id));
-  }
+
+    return axios.get("/api/member/validate/" + JSON.stringify(id));
+  },
+  //this will upload a file.  Sending in an object
+  uploadFile: function (fileInfo) {
+    //alert("validate API "+JSON.stringify(id));
+
+    return axios.post("/api/utils/upload", fileInfo);
+  },
+  //this will email a file.  Sending in an object
+  sendEmail: function (emailInfo) {
+    //alert("validate API "+JSON.stringify(id));
+
+    return axios.post("/api/utils/email", emailInfo);
+  },
+  //this will return the family name and text/email addresses for sending messages.
+  findMembersMessaging: function () {
+    return axios.get("/api/member/messaging");
+  },
 };

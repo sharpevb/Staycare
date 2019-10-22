@@ -5,6 +5,15 @@ const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 const app = express();
 
+/*daw 18-Oct-2019*/
+//cors needed for file upload
+const cors = require('cors');
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
 const db = require("./models");
 
 // Define middleware here
@@ -14,6 +23,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
