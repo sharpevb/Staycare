@@ -72,7 +72,7 @@ module.exports = {
   },
   //concatenated list of 
   findMembersMessaging: function (req, res) {
-    db.sequelize.query("SELECT a.id, familyname, GROUP_CONCAT(textaddress) addresses FROM families a, members b WHERE a.id = b.familyid GROUP BY a.id, familyname ORDER BY familyname",
+    db.sequelize.query("SELECT a.id, familyname, GROUP_CONCAT(textaddress) addresses FROM Families a, Members b WHERE a.id = b.familyid GROUP BY a.id, familyname ORDER BY familyname",
       { type: db.sequelize.QueryTypes.SELECT })
       .then(function (family) {
         console.log('family ' + JSON.stringify(family))
