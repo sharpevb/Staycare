@@ -65,7 +65,7 @@ class Homepage extends Component {
         <NavHome/>
         <div>
           <Container>
-            <h1 className="text-center">Children</h1>
+            <h1 className="childcard-title">Children</h1>
             <Alert
               type="danger"
               style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}

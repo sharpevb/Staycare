@@ -4,8 +4,8 @@ import "./style.css";
 
 function ChildCard(props) {
   return (
-    <div className="card col-md-3">
-      <div className="img-container">
+    <div className="card-body col-md-4" id="childcard-body">
+      <div className="card-img-container">
 
         <Link
           to={{
@@ -18,7 +18,7 @@ function ChildCard(props) {
         </Link>
         
       </div>
-    <div className="content">
+    <div className="childcard-content">
       <strong>{props.name}</strong>
     </div>
     </div >
