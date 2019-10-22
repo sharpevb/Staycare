@@ -1,13 +1,13 @@
 #familyProfileEdit {
   width: 40% !important;
-  background-color: blueviolet;
+  background-color: green;
   float: left;
   margin: 25px;
 }
 
 #familyProfileRO {
   width: 40% !important;
-  background-color: orange;
+  background-color: grey;
 }
 form {
   display: table;
