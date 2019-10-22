@@ -27,65 +27,43 @@ class DRfood extends Component {
 
     render() {
         return (
-            <div className="row" id="container">
-                <p>
-                    <button onClick={this.addFood} className="w3-button w3-circle w3-green w3-small" id="foodbutton">+</button> 
-                    {/* <button className="w3-button w3-circle w3-red w3-small">-</button> */}
-                </p>
-                <div className="col-1">
-                    <label>Food: </label>
-                </div>
-                {/* Display none but contains into */}
-                <div className="row" id="food" style={this.styles.div}>
-                    <div className="col-5">
-                        <input className="form-control" required></input>
+            <div className="container-fluid">
+                <div className="row" id="container">
+                    <p>
+                        <button onClick={this.addFood} className="w3-button w3-green w3-small">+</button>
+                    </p>
+                    <div className="col-3">
+                        <label>Food: </label>
                     </div>
 
-                    <div className="col">
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                            <label className="form-check-label">
-                                All</label>
+                    {/* Display none but contains into */}
+                    <div className="row" id="food" style={this.styles.div}>
+                        <div className="col">
+                            <input className="form-control" placeholder="PB&J"></input>
                         </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                            <label className="form-check-label">Some</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
-                            <label className="form-check-label">None</label>
+                        <br />
+                        <div className="col">
+                            <label>Amount: <span id="examples">All, Some, None</span></label> <input className="form-control" />
                         </div>
                     </div>
-                </div>
 
-                {/* Append new entry */}
-                <div className="row" id="food1">
-                    <div className="col-4">
-                        <input className="form-control" placeholder="PB&J" required></input>
-                    </div>
-
-                    <div className="col">
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                            <label className="form-check-label">
-                                All</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                            <label className="form-check-label">Some</label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
-                            <label className="form-check-label">None</label>
+                    {/* Append new entry */}
+                    <div className="row" id="food1">
+                        <div className="form-check">
+                            <div className="col">
+                                <input className="form-control" placeholder="PB&J" required></input>
+                            </div>
+                            <br />
+                            <div className="col">
+                                <label>Amount: <span id="examples">All, Some, None</span></label> <input className="form-control" />
+                            </div>
+                            <hr />
                         </div>
                     </div>
                 </div>
             </div>
         )
     }
-
 
 }
 

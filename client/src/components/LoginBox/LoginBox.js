@@ -74,7 +74,7 @@ class LoginBox extends Component {
                             <input className="form-control" type="password" name="password" value={this.state.password}
                                 placeholder="Password" onChange={this.handleInputChange} required />
                         </div>
-                        <button id="login-button" className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}>sign in</button>
+                        <button id="login-button" className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}><p id="sign-in">sign in</p></button>
                     </form>
                 </div>
             </div>

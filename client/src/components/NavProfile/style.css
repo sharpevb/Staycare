@@ -19,3 +19,7 @@
 .nav-link:hover {
     color: black;
 }
+
+#sign-out {
+    text-align: right;
+}

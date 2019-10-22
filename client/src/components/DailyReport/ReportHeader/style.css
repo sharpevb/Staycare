@@ -1,15 +1,14 @@
-body, html, .row {
-    background-color: white;
-}
-
-.image {
+#image {
     position: relative;
+    margin: 0 auto;
 }
 #banner-row {
     padding-top: 30px;
     
 }
-
 .col, h1 {
     text-align: left;
+}
+#provider-name {
+    text-align: right;
 }

@@ -1,6 +1,3 @@
-html, .row {
-    background-color: cadetblue;
-}
 
 h1 {
     padding-top: 10px;
@@ -13,10 +10,10 @@ h5 {
 }
 
 .card-body {
-    margin-top: 30px;
+    background-position: bottom;
     background-color: white;
     border-radius: 2em;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.7);
 }
 
 .form-label-group {
@@ -25,6 +22,9 @@ h5 {
 #login-button {
     background-color: cadetblue;
     border: cadetblue;
+}
+#sign-in {
+    margin-top: -7px;
 }
 .btn, .form-control {
     border-radius: 2rem;

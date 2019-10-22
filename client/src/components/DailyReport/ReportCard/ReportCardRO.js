@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import DRtitle from "../DRcomps/DR_title/DRtitle";
 import DRdiaperRO from "../DRcomps/DR_diaper/DRdiaperRO";
-import DRfood from "../DRcomps/DR_food/DRfood";
-import DRsleep from "../DRcomps/DR_sleep/DRsleep";
-import DRmeds from "../DRcomps/DR_meds/DRmeds";
-import DRnotes from "../DRcomps/DR_notes/DRnotes";
-import DRbutton from "../DRcomps/DR_button/DRbutton";
+import DRfoodRO from "../DRcomps/DR_food/DRfoodRO";
+import DRsleepRO from "../DRcomps/DR_sleep/DRsleepRO";
+import DRmedsRO from "../DRcomps/DR_meds/DRmedsRO";
+import DRnotesRO from "../DRcomps/DR_notes/DRnotesRO";
 import API from "../../../utils/API";
 import "./style.css";
+import ReportHeader from "../ReportHeader/ReportHeader";
+import NavProfile from "../../NavProfile/NavProfile";
 
 
 class ReportCard extends Component {
@@ -34,76 +35,38 @@ state = {
         },
 }
 
-componentDidMount() {
-    // Diaper
-    API.findActivityByChildId(3)
-    .then(res => {
-        let activity = {
-            id: res.data.id,
-            activitycode: res.data.activitycode,
-            time: res.data.time,
-            result1: res.data.result1,
-            result2: res.data.result2
-        };
-        this.setState({activity: activity});
-        //console.log(activity);
-    })
-    //.catch(err => console.log(err));
-    // API.findActivityByChildId(3)
-    // .then(res => {
-    //     let id = {
-    //         memberId: 3,
-    //         activitycode: res.data.activitycode,
-    //         activitydate: "2019-10-09",
-    //         time: res.data.time,
-    //         result1: res.data.result1,
-    //         result2: res.data.result2
-    //     };
-    //     this.setState({id: id});
-    //     console.log(id);
-    // })
-
-
-
-};
-
-
-    // onFocus={this.onFocus}
-// onBlur={this.onBlur}
-
-// onBlur() {
-//     API.updateActivity()
-// }
 
     render() {
         return (
+            <div>
+                <NavProfile />
+            
             <div className="container-fluid" id="daily-report">
+                <ReportHeader />
                 <DRtitle />
                 <div className="row">
-                        {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> <input id="" name="diapers" placeholder="time"></input>  */}
                             <div className="col-12">
                                 <DRdiaperRO />
                             </div>
 
                             <div className="col-12">
-                                <DRfood />
+                                <DRfoodRO />
                             </div>                    
 
                             <div className="col-4">
-                                <DRsleep />
+                                <DRsleepRO />
                             </div>
 
                             <div className="col-6">
-                                <DRmeds />
+                                <DRmedsRO />
                             </div>
 
-                            <div className="col col-4">
-                                <DRnotes />
-                                <DRbutton />
+                            <div className="col col-6">
+                                <DRnotesRO />
                             </div>
                 </div>
             </div>
-
+            </div>
         )
     }
 

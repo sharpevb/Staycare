@@ -12,7 +12,7 @@ function DRmeds() {
             </div>
             
             <div className="col-5">
-            <input className="form-control" id="" name="meds"></input>
+            <input className="form-control" placeholder="If applicable" id="" name="meds"></input>
 </div>
             <div className="col col-1">
             <div className="form-check form-check-inline">

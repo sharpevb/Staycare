@@ -3,13 +3,13 @@ import API from "../../../../utils/API";
 import "./style.css";
 
 
-class DRdiaper extends Component {
+class DRfood extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            activity1: {
+            activity4: {
                 memberId: "",
                 activitydate: "",
                 activitycode: "",
@@ -17,15 +17,7 @@ class DRdiaper extends Component {
                 result1: "",
                 result2: ""
             },
-            activity2: {
-                memberId: "",
-                activitydate: "",
-                activitycode: "",
-                time: "",
-                result1: "",
-                result2: ""
-            },
-            activity3: {
+            activity5: {
                 memberId: "",
                 activitydate: "",
                 activitycode: "",
@@ -40,9 +32,9 @@ class DRdiaper extends Component {
 
     componentDidMount() {
 
-        API.findActivityById(1)
+        API.findActivityById(4)
         .then(res => {
-            let activity1 = {
+            let activity4 = {
                 memberId: 3,
                 activitycode: res.data.activitycode,
                 activitydate: res.data.activitydate,
@@ -50,17 +42,17 @@ class DRdiaper extends Component {
                 result1: res.data.result1,
                 result2: res.data.result2,
             };
-            this.setState({ activity1: activity1 });
-            console.log(activity1);
+            this.setState({ activity4: activity4 });
+            console.log(activity4);
 
 
         })
         .catch(err => console.log(err));
        
         
-        API.findActivityById(2)
+        API.findActivityById(5)
         .then(res => {
-            let activity2 = {
+            let activity5 = {
                 memberId: 3,
                 activitycode: res.data.activitycode,
                 activitydate: res.data.activitydate,
@@ -68,32 +60,16 @@ class DRdiaper extends Component {
                 result1: res.data.result1,
                 result2: res.data.result2,
             };
-            this.setState({ activity2: activity2 });
-            console.log(activity2);
+            this.setState({ activity5: activity5 });
+            console.log(activity5);
 
 
         })
         .catch(err => console.log(err));
       
 
-        API.findActivityById(3)
-        .then(res => {
-            let activity3 = {
-                memberId: 3,
-                activitycode: res.data.activitycode,
-                activitydate: res.data.activitydate,
-                time: res.data.time,
-                result1: res.data.result1,
-                result2: res.data.result2,
-            };
-            this.setState({ activity3: activity3 });
-            console.log(activity3);
-
-
-        })
-        .catch(err => console.log(err));
-
     }
+
 
 
     render() {
@@ -101,14 +77,14 @@ class DRdiaper extends Component {
             <div className="container-fluid">
                 <div className="row" id="container">
                     <div className="col-3">
-                        <label>Bathroom: </label>
+                        <label>Food: </label>
                     </div>
 
                     {/* Displays from db  */}
                     <div className="col-7">
-                        <p>Time: {this.state.activity1.time} || Type: {this.state.activity1.result1}</p>
-                        <p>Time: {this.state.activity2.time} ||  Type: {this.state.activity2.result1}</p>
-                        <p>Time: {this.state.activity3.time} ||  Type: {this.state.activity3.result1}</p>
+                        <p>Time: {this.state.activity4.time} || Type: {this.state.activity4.result1} || Amount: {this.state.activity4.result2}</p>
+                        <p>Time: {this.state.activity5.time} || Type: {this.state.activity5.result1} || Amount: {this.state.activity5.result2}</p>
+                        
                     </div>
                     <br />
                 </div>
@@ -118,4 +94,4 @@ class DRdiaper extends Component {
 
 }
 
-export default DRdiaper;
+export default DRfood;
