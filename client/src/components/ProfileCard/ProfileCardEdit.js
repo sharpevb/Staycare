@@ -4,7 +4,7 @@ import "./style.css";
 function ProfileCardEdit(props) {
   return (
     <div>
-      <div className="card-body" id="profileCardEdit">
+      <div className="card-body" id="profileCardEditable">
         <div classname="card-body">
           <p>
             <strong>Name:</strong>{" "}
