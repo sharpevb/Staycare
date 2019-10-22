@@ -1,13 +1,13 @@
 #profileCardEditable {
   width: 40% !important;
-  background-color: blueviolet;
+  background-color: cadetblue;
   float: left;
   margin: 25px;
 }
 
 #profileCardRO {
   width: 40% !important;
-  background-color: orange;
+  background-color: cadetblue;
 }
 
 form {
