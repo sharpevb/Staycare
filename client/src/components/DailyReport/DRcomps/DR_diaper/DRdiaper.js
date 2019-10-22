@@ -94,28 +94,27 @@ class DRdiaper extends Component {
                     <p>
                         <button onClick={this.addBathroom} className="w3-button w3-green w3-small">+</button>
                     </p>
-                    <div className="col-2">
+                    <div className="col-3">
                         <label>Bathroom: </label>
                     </div>
 
                     {/* Display none but contains info */}
                     <div className="row" id="bathroom" style={this.styles.div}>
-                            <div className="col">
-                                <input className="form-control" placeholder="13:00"></input>
-                            </div>    
-                            <br />
-                            <div className="col">
-                                <label>Type: <span id="examples">Wet, Dry, BM, Wet/BM, Diarrhea</span></label> <input className="form-control" />
-                            </div>
-                            
+                        <div className="col">
+                            <input className="form-control" placeholder="13:00"></input>
+                        </div>
+                        <br />
+                        <div className="col">
+                            <label>Type: <span id="examples">Wet, Dry, BM, Wet/BM, Diarrhea</span></label> <input className="form-control" />
+                        </div>
                     </div>
 
                     {/* Append new entry */}
                     <div className="row" id="bathroom1">
                         <div className="form-check">
-                        <div className="col">
+                            <div className="col">
                                 <input className="form-control" placeholder="13:00"></input>
-                            </div>    
+                            </div>
                             <br />
                             <div className="col">
                                 <label>Type: <span id="examples">Wet, Dry, BM, Wet/BM, Diarrhea</span></label> <input className="form-control" />
@@ -125,7 +124,6 @@ class DRdiaper extends Component {
                     </div>
                 </div>
             </div>
-
         )
     }
 

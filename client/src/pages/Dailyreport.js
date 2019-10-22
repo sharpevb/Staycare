@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
-import ReportCard from "../components/DailyReport/ReportCard/ReportCard";
 import ReportCardRO from "../components/DailyReport/ReportCard/ReportCardRO";
 //import API from "../utils/API";
 import Reportpage from "../components/DailyReport/Reportpage";

@@ -19,9 +19,6 @@ class ReportHeader extends Component {
             surname: "",
             primaryphone: "",
         },
-        provider: {
-            name: "",
-        }
     }
 
     componentDidMount() {
@@ -57,22 +54,13 @@ class ReportHeader extends Component {
             })
         //.catch(err => console.log(err));
 
-        API.findMembersByFamily(0)
-        .then(res => {
-            console.log(res)
-            let provider = {
-                name: res.data[0].name
-            };
-            this.setState({provider: provider});
-        })
-        .catch(err => console.log(err));
+       
     }
 
 
     render() {
         return (
             <div className="container-fluid">
-                <p id="provider-name"><strong>Provider: </strong>{this.state.provider.name}</p>
                 <div className="row" id="banner-row">
 
                     <div className="image-wrapper">

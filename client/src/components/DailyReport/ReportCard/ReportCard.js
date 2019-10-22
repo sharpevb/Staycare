@@ -32,6 +32,9 @@ state = {
         error: "",
         id: ""
         },
+        provider: {
+            name: "",
+        }
 }
 
 componentDidMount() {
@@ -63,7 +66,15 @@ componentDidMount() {
     //     console.log(id);
     // })
 
-
+    API.findMembersByFamily(0)
+    .then(res => {
+        console.log(res)
+        let provider = {
+            name: res.data[0].name
+        };
+        this.setState({provider: provider});
+    })
+    .catch(err => console.log(err));
 
 };
 
@@ -71,11 +82,12 @@ componentDidMount() {
     render() {
         return (
             <div className="container-fluid" id="daily-report">
+                <p id="provider-name"><strong>Provider: </strong>{this.state.provider.name}</p>
+                
                 <DRtitle />
                 <div className="row">
                     <div className="col">
                         <div className="row">
-                        {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> <input id="" name="diapers" placeholder="time"></input>  */}
                             <div className="col-12">
                                 <DRdiaper />
                             </div>
@@ -92,7 +104,7 @@ componentDidMount() {
                                 <DRmeds />
                             </div>
 
-                            <div className="col col-4">
+                            <div className="col col-6">
                                 <DRnotes />
                                 <DRbutton />
                             </div>

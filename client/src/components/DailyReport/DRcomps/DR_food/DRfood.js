@@ -32,7 +32,7 @@ class DRfood extends Component {
                     <p>
                         <button onClick={this.addFood} className="w3-button w3-green w3-small">+</button>
                     </p>
-                    <div className="col-2">
+                    <div className="col-3">
                         <label>Food: </label>
                     </div>
 
@@ -64,7 +64,6 @@ class DRfood extends Component {
             </div>
         )
     }
-
 
 }
 

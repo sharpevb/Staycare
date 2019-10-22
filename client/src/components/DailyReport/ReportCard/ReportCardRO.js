@@ -5,9 +5,10 @@ import DRfood from "../DRcomps/DR_food/DRfood";
 import DRsleep from "../DRcomps/DR_sleep/DRsleep";
 import DRmeds from "../DRcomps/DR_meds/DRmeds";
 import DRnotes from "../DRcomps/DR_notes/DRnotes";
-import DRbutton from "../DRcomps/DR_button/DRbutton";
 import API from "../../../utils/API";
 import "./style.css";
+import ReportHeader from "../ReportHeader/ReportHeader";
+import NavProfile from "../../NavProfile/NavProfile";
 
 
 class ReportCard extends Component {
@@ -77,7 +78,11 @@ componentDidMount() {
 
     render() {
         return (
+            <div>
+                <NavProfile />
+            
             <div className="container-fluid" id="daily-report">
+                <ReportHeader />
                 <DRtitle />
                 <div className="row">
                         {/* <label>Diaper Change:</label><input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers"></input> <input id="" name="diapers" placeholder="time"></input>  */}
@@ -97,13 +102,12 @@ componentDidMount() {
                                 <DRmeds />
                             </div>
 
-                            <div className="col col-4">
+                            <div className="col col-6">
                                 <DRnotes />
-                                <DRbutton />
                             </div>
                 </div>
             </div>
-
+            </div>
         )
     }
 

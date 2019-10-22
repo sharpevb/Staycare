@@ -1,14 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
 
 
-function DRbutton() {
+class DRbutton extends Component {
 
-    return (
+    submit() {
+        alert("Updated")
+    }
+    render() {
+      return (
         <div>
-            <button className="w3-button" id="submit-button">Submit (may not need)</button>
+            <button 
+            onClick={this.submit}
+            className="w3-button" 
+            id="submit-button">Submit</button>
         </div>
-    )
+    )  
+    }
+    
 
 }
 

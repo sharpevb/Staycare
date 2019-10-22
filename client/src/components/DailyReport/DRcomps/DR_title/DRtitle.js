@@ -13,28 +13,14 @@ class DRtitle extends Component {
             time: "",
             result1: "",
             result2: "",
+            
         }
     }
 
     componentDidMount() {
 
 
-        API.findActivityById(1)
-            .then(res => {
-                let activity = {
-                    memberId: 3,
-                    activitycode: res.data.activitycode,
-                    activitydate: res.data.activitydate,
-                    time: res.data.time,
-                    result1: res.data.result1,
-                    result2: res.data.result2
-                };
-                this.setState({ activity: activity });
-                console.log(activity);
-
-                
-            })
-            .catch(err => console.log(err));
+        
     }
     render() {
       return (
