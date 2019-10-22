@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../../../utils/API";
 import "./style.css";
 
 
@@ -6,18 +7,24 @@ class DRtitle extends Component {
 
     state = {
         activity: {
-            memberId: "",
             activitydate: "",
-            activitycode: "",
-            time: "",
-            result1: "",
-            result2: "",
             
         }
     }
 
     componentDidMount() {
+        API.findActivityById(1)
+        .then(res => {
+            let activity = {
+                memberId: 3,
+                activitydate: res.data.activitydate,
+            };
+            this.setState({ activity: activity });
+            console.log(activity);
 
+
+        })
+        .catch(err => console.log(err));
 
         
     }
@@ -27,7 +34,7 @@ class DRtitle extends Component {
         <div className="row" id="container">
             <div className="col-3" id="dr-title">
                 <h1>Daily Report</h1>
-                <input type="date" className="form-control"></input>
+                <p>{this.state.activity.activitydate}</p>
             </div>
         </div>
 

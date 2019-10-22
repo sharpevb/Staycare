@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import DRtitle from "../DRcomps/DR_title/DRtitle";
+import DRtitleRO from "../DRcomps/DR_title/DRtitleRO";
 import DRdiaperRO from "../DRcomps/DR_diaper/DRdiaperRO";
 import DRfoodRO from "../DRcomps/DR_food/DRfoodRO";
 import DRsleepRO from "../DRcomps/DR_sleep/DRsleepRO";
 import DRmedsRO from "../DRcomps/DR_meds/DRmedsRO";
 import DRnotesRO from "../DRcomps/DR_notes/DRnotesRO";
-import API from "../../../utils/API";
 import "./style.css";
 import ReportHeader from "../ReportHeader/ReportHeader";
 import NavProfile from "../../NavProfile/NavProfile";
 
 
-class ReportCard extends Component {
+class ReportCardRO extends Component {
 
     
 state = {
@@ -43,7 +42,7 @@ state = {
             
             <div className="container-fluid" id="daily-report">
                 <ReportHeader />
-                <DRtitle />
+                <DRtitleRO />
                 <div className="row">
                             <div className="col-12">
                                 <DRdiaperRO />
@@ -74,31 +73,4 @@ state = {
 
 }
 
-export default ReportCard;
-
-
-
-
-
-
-// handleInputChange = (event) => {
-    //     const target = event.target;
-    //     const value = target.value;
-    //     const name = target.name;
-    //     this.setState({
-    //         [name]: value
-    //     });
-
-    // }
-
-
-    /* <div>
-        <form>
-        <input id="" value={this.state.diapers} onChange={this.handleInputChange} name="diapers">Diaper Change: </input>
-        <input id="" value={this.state.feedings} onChange={this.handleInputChange} name="feedings">Feeding: </input>
-        <input id="" value={this.state.naps} onChange={this.handleInputChange} name="naps">Naps: </input>
-        <input id="" value={this.state.meds} onChange={this.handleInputChange} name="meds">Medications administered: </input>
-        <input id="" value={this.state.incidents} onChange={this.handleInputChange} name="incidents">Incidents: </input>
-        </form>
-         
-      </div> */
+export default ReportCardRO;
