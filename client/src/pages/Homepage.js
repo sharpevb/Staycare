@@ -1,24 +1,22 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import NavHome from "../components/NavHome/NavHome";
 import Container from "../components/Container";
 import ChildCard from "../components/ChildCard";
 import Alert from "../components/Alert";
 
-class Search extends Component {
+class Homepage extends Component {
   state = {
     children: [],
     error: "",
     familyId: ""
   };
 
-   // When the component mounts, get a list of all available base breeds and update this.state.breeds
+  // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
     //store the family ID in session state on login
 
-    //sessionStorage.setItem("familyId",1);
-    const loggedIn = sessionStorage.getItem("familyId");
-   
-    //console.log("state familyId : "+loggedIn)
+    const loggedIn = parseInt(sessionStorage.getItem("familyId"));
     //if family id = 0 then it's a provider   
     if (loggedIn === 0) {
       API.findMembers()
@@ -28,6 +26,8 @@ class Search extends Component {
           }
           //filter to just children.
           const results = res.data;
+          console.log('result length ' + results.length)
+
           const newArray = results.filter(result => result.membertype === "Child");
           this.setState({ children: newArray, error: "" });
 
@@ -43,42 +43,50 @@ class Search extends Component {
           }
           //filter to just children.
           const results = res.data;
+          console.log('results ' + JSON.stringify(results))
+          console.log('results ' + results[0].id)
+          console.log('result length ' + results.length)
           const newArray = results.filter(result => result.membertype === "Child");
+          console.log('newarray ' + JSON.stringify(newArray));
           this.setState({ children: newArray, error: "" });
         })
         .catch(err => this.setState({ error: err.name }))
     }
     //they have not logged in, so send them to login screen
     else {
+      sessionStorage.removeItem('familyId');
       window.location.replace("/login");
     }
   }
 
   render() {
     return (
-      <div>
-        <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Children</h1>
-          <Alert
-            type="danger"
-            style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-          >
-            {this.state.error}
-          </Alert>
+      <div className="header-info">
+        <NavHome/>
+        <div>
+          <Container>
+            <h1 className="text-center">Children</h1>
+            <Alert
+              type="danger"
+              style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+            >
+              {this.state.error}
+            </Alert>
 
-          {this.state.children.map(child => (
-            <ChildCard
-              id={child.id}
-              key={child.id}
-              name={child.name}
-              image={child.image}
-            />
-          ))}
+            {this.state.children.map(child => (
+              <ChildCard
+                id={child.id}
+                key={child.id}
+                name={child.name}
+                image={child.image}
+              />
+            ))}
 
-        </Container>
+          </Container>
+        </div>
       </div>
     );
   }
 }
 
-export default Search;
+export default Homepage;

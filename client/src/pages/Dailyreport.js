@@ -5,7 +5,6 @@ import ReportHeader from "../components/DailyReport/ReportHeader/ReportHeader";
 //import ReportCard from "../components/DailyReport/ReportCard/ReportCard";
 import ReportCardRO from "../components/DailyReport/ReportCard/ReportCardRO";
 import API from "../utils/API";
-import Footer from "../components/Footer/Footer";
 
 class DailyReport extends Component {
 
@@ -14,7 +13,7 @@ class DailyReport extends Component {
   // If parent, unable to edit
 
 componentDidMount() {
-const loggedIn = sessionStorage.getItem("familyId");
+const loggedIn = parseInt(sessionStorage.getItem("familyId"));
 //if family id = 0 then it's a provider   
 if (loggedIn === 0) {
   API.findMembers() //
@@ -95,7 +94,6 @@ else {
           <ReportHeader />
           <form><ReportCardRO /></form>
         </div>
-        <Footer />
       </div>
     )
   }

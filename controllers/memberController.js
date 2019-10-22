@@ -1,4 +1,5 @@
 const db = require("../models");
+const sequelize = require('sequelize')
 
 // Defining methods for the memberController
 module.exports = {
@@ -60,13 +61,22 @@ module.exports = {
     var object_query = JSON.parse(req.params.id);
     var v_email = object_query.email;
     var v_password = object_query.password;
-//this will encrypt the password entered for comparison.
+    //this will encrypt the password entered for comparison.
     db.Member.findOne({
       attributes: ["FamilyId"],
-      where: {password: db.sequelize.fn('aes_encrypt', v_password, 'fullstack'), email: v_email}
+      where: { password: db.sequelize.fn('aes_encrypt', v_password, 'fullstack'), email: v_email }
     }).then(function (dbMember) {
-      console.log("dbmembr "+JSON.stringify(dbMember));
+      console.log("dbmembr " + JSON.stringify(dbMember));
       res.json(JSON.stringify(dbMember));
     });
+  },
+  //concatenated list of 
+  findMembersMessaging: function (req, res) {
+    db.sequelize.query("SELECT a.id, familyname, GROUP_CONCAT(textaddress) addresses FROM families a, members b WHERE a.id = b.familyid GROUP BY a.id, familyname ORDER BY familyname",
+      { type: db.sequelize.QueryTypes.SELECT })
+      .then(function (family) {
+        console.log('family ' + JSON.stringify(family))
+        res.json(JSON.stringify(family));
+      });
   }
 };
