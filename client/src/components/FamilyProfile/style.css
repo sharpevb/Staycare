@@ -1,0 +1,23 @@
+#familyProfileEdit {
+  width: 40% !important;
+  background-color: blueviolet;
+  float: left;
+  margin: 25px;
+}
+
+#familyProfileRO {
+  width: 40% !important;
+  background-color: orange;
+}
+form {
+  display: table;
+}
+p {
+  display: table-row;
+}
+strong {
+  display: table-cell;
+}
+input {
+  display: table-cell;
+}

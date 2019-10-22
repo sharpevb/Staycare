@@ -35,7 +35,7 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    this.loadProfile(4);
+    this.loadProfile(1);
   }
 
   loadProfile = (id) => {
@@ -161,7 +161,8 @@ deleteFamily = id => {
       /></div>;
 
 return (
-        <div><NavProfile />
+        <div>
+        <NavProfile />
         {(this.state.familyProfile.familyname !== 'Providers') ? editCard : readCard}
         <Footer /></div>
     )
