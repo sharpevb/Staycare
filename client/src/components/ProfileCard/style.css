@@ -1,4 +1,4 @@
-.card {
+/* .card {
   background: #fff;
   border-radius: 2px;
   height: 325px;
@@ -7,8 +7,8 @@
   width: 325px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   text-align: left;
-}
-
+} */
+/* 
 .card > .img-container {
   height: 60%;
   overflow: hidden;
@@ -31,4 +31,30 @@
 
 .card > .content > ul > li {
   margin-top: 18px;
+} */
+
+
+#profileCardEdit {
+  width: 40% !important;
+  background-color: blueviolet;
+  float: left;
+  margin: 25px;
+}
+
+#profileCardRO {
+  width: 40% !important;
+  background-color: orange;
+}
+
+form {
+  display: table;
+}
+p {
+  display: table-row;
+}
+strong {
+  display: table-cell;
+}
+input {
+  display: table-cell;
 }
