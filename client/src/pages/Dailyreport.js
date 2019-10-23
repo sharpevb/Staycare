@@ -5,10 +5,22 @@ import ReportCardRO from "../components/DailyReport/ReportCard/ReportCardRO";
 import Reportpage from "../components/DailyReport/Reportpage";
 
 class DailyReport extends Component {
+  state = {
+    memberId: 0
+  };
 
-componentDidMount() {
+  // If provider, able to edit
+  // If parent, unable to edit
 
-  }
+  componentDidMount() {
+    //this will get the parameter passed on the command line, which will be the memberId
+    const { match: { params } } = this.props;
+    console.log('params.member id ' + params.memberId)
+    const paramId = parseInt(params.memberId);
+    this.setState({ memberId: paramId }, () => {
+      console.log('member id ' + this.state.memberId);
+    });
+  };
 
   handleInputChange = (event) => {
     const target = event.target;

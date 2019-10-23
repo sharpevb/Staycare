@@ -50,12 +50,16 @@ class Upload extends Component {
     console.log('index ' + index)
     var afamily = this.props.families[index];
     var address = afamily.addresses;
+    console.log('address '+address)
     //  var address = this.props.families[index].addresses;
-    this.setState({ addresses: address });
+    //make sure the address is set before proceeding
+    this.setState({ addresses: address }, () => {
+      console.log('addresses state ' + this.state.addresses);});
+
     console.log('addresses ' + index);
     console.log('families ' + JSON.stringify(this.props.families))
     console.log("Family", this.props.familyname);
-    console.log("addresses props" + this.props.addresses);
+   // console.log("addresses props" + this.props.addresses);
     console.log("addresses state" + this.state.addresses);
     
     const promises = [];
@@ -77,7 +81,8 @@ class Upload extends Component {
     //email without a file is not working
     else {
       const email = {
-        "to": this.state.addresses, "subject": this.props.subject, "text": this.props.message
+        "to": address, "subject": this.props.subject, "text": this.props.message,
+        "filename": []
       };
       //if sending an email, otherwise just uploading
       console.log("email " + JSON.stringify(email));
