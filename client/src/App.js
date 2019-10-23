@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/dailyreport" component={DailyReport} />
+          <Route exact path="/dailyreport/:memberId" component={DailyReport} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/message" component={Message} />
           <Route component={NoMatch} />

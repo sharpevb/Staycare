@@ -8,10 +8,8 @@ function ChildCard(props) {
       <div className="card-img-container">
 
         <Link
-          to={{
-            pathname: "/dailyreport",
-            data: { id: props.id }
-          }
+          to={
+            `/dailyreport/${props.id }`
           }
         >
           <img alt={props.name} src={props.image} />
