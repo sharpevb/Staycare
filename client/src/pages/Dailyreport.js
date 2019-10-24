@@ -18,7 +18,9 @@ class DailyReport extends Component {
     console.log('params.member id ' + params.memberId)
     const paramId = parseInt(params.memberId);
     this.setState({ memberId: paramId }, () => {
+      
       console.log('member id ' + this.state.memberId);
+      sessionStorage.setItem("memberId", this.state.memberId);
     });
   };
 
@@ -29,14 +31,16 @@ class DailyReport extends Component {
     this.setState({
       [name]: value
     });
-
+    window.location.reload();
   }
 
   render() {
     const loggedIn = parseInt(sessionStorage.getItem("familyId"));
     //if family id = 0 then it's a provider   
     if (loggedIn === 0) {
-      return <Reportpage /> // Will change to Reportpage
+      return <Reportpage 
+              memberId={this.state.memberId}
+              /> // Will change to Reportpage
     }
     //then member who has logged in.
     else if (loggedIn > 0) {

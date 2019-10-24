@@ -6,6 +6,7 @@ import "./style.css";
 class ReportHeader extends Component {
 
     state = {
+        //memberId: "",
         kid: {
             id: "",
             name: "",
@@ -22,9 +23,19 @@ class ReportHeader extends Component {
     }
 
     componentDidMount() {
+        const memberId = parseInt(sessionStorage.getItem("memberId"), () => {
+            console.log(memberId);
+        });
+        // const memberId = this.props.memberId;
+        //     console.log(memberId);
+        
+        
+        const familyId = parseInt(sessionStorage.getItem("familyId"));
         //Eddie Info
-        API.findMemberById(3)
+        API.findMemberById(memberId)
+        
             .then(res => {
+                //console.log(JSON.stringify(res.data))
                 let kid = {
                     id: res.data.id,
                     name: res.data.name,
@@ -32,16 +43,16 @@ class ReportHeader extends Component {
                     allergies: res.data.allergies,
                     medication: res.data.medication,
                     image: res.data.image,
-
+                    familyId: res.data.FamilyId
                 };
                 this.setState({ kid: kid })
-            });
+            
         //.catch(err => console.log(err));
 
         // Family members and their info
-        API.findMembersByFamily(1)
+        API.findMembersByFamily(kid.familyId)
             .then(res => {
-                //console.log(res)
+                console.log(JSON.stringify(res))
                 let familyProfile = {
                     child1: res.data[0].name,
                     parent1: res.data[1].name,
@@ -51,7 +62,8 @@ class ReportHeader extends Component {
                 };
                 this.setState({ familyProfile: familyProfile });
                 //console.log(familyProfile);
-            })
+            });
+            });
         //.catch(err => console.log(err));
 
        
@@ -64,7 +76,7 @@ class ReportHeader extends Component {
                 <div className="row" id="banner-row">
 
                     <div className="image-wrapper">
-                        <img className="image-responsive" id="image" alt={this.state.kid.image} src={this.state.kid.image}></img>
+                        <img className="image-responsive" id="image" alt={this.state.kid.image} src={"../" + this.state.kid.image}></img>
                     </div>
                     
                     <div className="col-9" id="header-info">
