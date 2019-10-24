@@ -8,69 +8,54 @@ function ProfileCardEdit(props) {
         <div classname="card-body">
           <p>
             <strong>Name:</strong>{" "}
-            <input
-              value={props.name}
-              name="name"
-              onChange={props.handleInputChange}
-            />
+            <p name="name"
+              onChange={props.handleInputChange}> {props.name}</p>
           </p>
-          <p>
+          {/* <p>
             <strong>ID:</strong>{" "}
             <input
               value={props.id}
               name="id"
               onChange={props.handleInputChange}
             />
-          </p>
+          </p> */}
           <p>
-            <strong>Membertype:</strong>{" "}
-            <input
-              value={props.membertype}
-              name="membertype"
-              onChange={props.handleInputChange}
-            />{" "}
+            <strong>Relationship: {""}</strong>
+            <p name="membertype"
+              onChange={props.handleInputChange}>
+              {" "}{props.membertype}</p>
           </p>
           <p>
             <strong>Email:</strong>{" "}
-            <input
-              value={props.email}
-              name="email"
-              onChange={props.handleInputChange}
-            />{" "}
+            <p name="email"
+              onChange={props.handleInputChange}>
+              {props.email}</p>
           </p>
           <p>
-            <strong>dob:</strong>{" "}
-            <input
-              value={props.dob}
-              name="dob"
-              onChange={props.handleInputChange}
-            />{" "}
+            <strong>Phone:</strong>{" "}
+            <p name="phone"
+              onChange={props.handleInputChange}>
+              {props.phone}
+              
+            </p>{" "}
           </p>
-          <p>
-            <strong>phone:</strong>{" "}
-            <input
-              value={props.phone}
-              name="phone"
-              onChange={props.handleInputChange}
-            />{" "}
-          </p>
-          <p>
-            <strong>textaddress:</strong>{" "}
-            <input
-              value={props.textaddress}
-              name="textaddress"
-              onChange={props.handleInputChange}
-            />
-          </p>
-          <p>
+          {/* <p>
+            <strong>Message Address:</strong>{" "}
+            <p name="textaddress"
+              onChange={props.handleInputChange}>
+              {props.textaddress}
+              
+            </p>
+          </p> */}
+          {/* <p>
             <strong>allergies:</strong>{" "}
             <input
               value={props.allergies}
               name="allergies"
               onChange={props.handleInputChange}
             />{" "}
-          </p>
-          <p>
+          </p> */}
+          {/* <p>
             {" "}
             <strong>medication:</strong>{" "}
             <input
@@ -78,7 +63,7 @@ function ProfileCardEdit(props) {
               name="medication"
               onChange={props.handleInputChange}
             />{" "}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

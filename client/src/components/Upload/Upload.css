@@ -91,7 +91,7 @@ button {
   background: cadetblue;
   color: #fff;
   outline: 0;
-  float: left;
+  float: center;
 }
 
 button:disabled {

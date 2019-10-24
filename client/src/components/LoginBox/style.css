@@ -1,35 +1,48 @@
 
-h1 {
+#login-title {
     padding-top: 10px;
     text-align: center;
 }
-h5 {
+#signin-text {
     padding-top: 10px;
     margin-bottom: 25px;
     text-align: center;
 }
 
-.card-body {
+#login-body {
+    margin: auto;
+    margin-top: 100px;
+    width: 100%;
     background-position: bottom;
     background-color: white;
     border-radius: 2em;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.7);
-}
 
-.form-label-group {
+}
+#form-login {
+    margin: 0 auto;
+    padding: 0px 40px 30px 40px;
+    
+}
+#card-text {
+    margin: 0 auto;
+}
+#login-fields {
     margin-bottom: 30px;
+    width: 300px;
+    text-align: center;
+    padding: 0 auto;
 }
 #login-button {
-    background-color: cadetblue;
-    border: cadetblue;
+    border-radius: 2em;
 }
 #sign-in {
-    margin-top: -7px;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 13pt;
 }
+
 .btn, .form-control {
     border-radius: 2rem;
     padding: 15px;
-}
-.form-signin {
-    padding: 0px 40px 30px 40px;
 }

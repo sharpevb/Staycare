@@ -10,7 +10,6 @@ class Reportpage extends Component {
       };
 
       componentDidMount() {
-          
         this.setState({ memberId: this.props.memberId }, () => {
       
             console.log('member id ' + this.state.memberId);

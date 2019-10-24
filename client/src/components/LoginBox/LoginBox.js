@@ -55,26 +55,26 @@ class LoginBox extends Component {
 
     render() {
         return (
-            <div className="card-body">
+            <div className="card-body" id="login-body">
                 <div className="card-title">
-                    <h1>Staycare</h1>
+                    <h1 id="login-title">Staycare</h1>
                     <hr />
-                    <h5>SIGN IN</h5>
+                    <h5 id="signin-text">SIGN IN</h5>
                 </div>
-                <div className="card-text">
-                    <form className="form-signin">
-                        <div className="form-label-group">
+                <div className="card-text" id="card-text">
+                    <form className="form-signin" id="form-login">
+                        <div className="form-label-group" >
                             {/* <label id="label" htmlFor="email">Email Address:</label> */}
-                            <input className="form-control" type="email" name="email" value={this.state.email}
+                            <input className="form-control" id="login-fields" type="email" name="email" value={this.state.email}
                                 placeholder="Email Address" onChange={this.handleInputChange} required />
                         </div>
 
-                        <div className="form-label-group">
+                        <div className="form-label-group" id="login-fields">
                             {/* <label id="label" htmlFor="password">Password:</label> */}
-                            <input className="form-control" type="password" name="password" value={this.state.password}
+                            <input className="form-control" id="login-fields" type="password" name="password" value={this.state.password}
                                 placeholder="Password" onChange={this.handleInputChange} required />
                         </div>
-                        <button id="login-button" className="btn btn-md btn-primary btn-block text-uppercase" onClick={this.submitLogin}><p id="sign-in">sign in</p></button>
+                        <button id="login-button" className="btn-block " onClick={this.submitLogin}><span id="sign-in">SIGN IN</span></button>
                     </form>
                 </div>
             </div>

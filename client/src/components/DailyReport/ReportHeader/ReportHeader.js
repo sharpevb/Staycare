@@ -80,7 +80,7 @@ class ReportHeader extends Component {
                     </div>
                     
                     <div className="col-9" id="header-info">
-                        <h1>{this.state.kid.name} {this.state.familyProfile.surname}</h1>
+                        <h1 id="child-name">{this.state.kid.name} {this.state.familyProfile.surname}</h1>
                         <div className="row">
                             <div className="col-4">
                                 <p><strong>Date of Birth:</strong> {this.state.kid.dob}</p>
