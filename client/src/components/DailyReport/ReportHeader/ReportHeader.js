@@ -76,7 +76,7 @@ class ReportHeader extends Component {
                 <div className="row" id="banner-row">
 
                     <div className="image-wrapper">
-                        <img className="image-responsive" id="image" alt={this.state.kid.image} src={this.state.kid.image}></img>
+                        <img className="image-responsive" id="image" alt={this.state.kid.image} src={"../" + this.state.kid.image}></img>
                     </div>
                     
                     <div className="col-9" id="header-info">
