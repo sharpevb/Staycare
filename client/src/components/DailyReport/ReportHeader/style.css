@@ -6,7 +6,7 @@
     padding-top: 30px;
     
 }
-.col, h1 {
+#header-info, #child-name {
     text-align: left;
 }
 #provider-name {

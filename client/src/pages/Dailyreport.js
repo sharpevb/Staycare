@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
-import ReportCardRO from "../components/DailyReport/ReportCard/ReportCardRO";
+//import ReportCardRO from "../components/DailyReport/ReportCard/ReportCardRO";
 //import API from "../utils/API";
-import Reportpage from "../components/DailyReport/Reportpage";
+//import Reportpage from "../components/DailyReport/Reportpage";
+import ReportpageRO from "../components/DailyReport/ReportpageRO";
 
 class DailyReport extends Component {
   state = {
@@ -17,10 +18,11 @@ class DailyReport extends Component {
     const { match: { params } } = this.props;
     console.log('params.member id ' + params.memberId)
     const paramId = parseInt(params.memberId);
+    sessionStorage.setItem("memberId", paramId);
     this.setState({ memberId: paramId }, () => {
       
       console.log('member id ' + this.state.memberId);
-      sessionStorage.setItem("memberId", this.state.memberId);
+      
     });
   };
 
@@ -37,14 +39,16 @@ class DailyReport extends Component {
   render() {
     const loggedIn = parseInt(sessionStorage.getItem("familyId"));
     //if family id = 0 then it's a provider   
-    if (loggedIn === 0) {
-      return <Reportpage 
+    if (loggedIn === 0 ) {
+      return <ReportpageRO 
               memberId={this.state.memberId}
               /> // Will change to Reportpage
     }
     //then member who has logged in.
     else if (loggedIn > 0) {
-      return <ReportCardRO /> // Will change to ReportpageRO
+      return <ReportpageRO
+      memberId={this.state.memberId}
+       /> // Will change to ReportpageRO
     }
     //they have not logged in, so send them to login screen
     else {

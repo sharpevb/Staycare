@@ -42,14 +42,6 @@ function ProfileCardReadOnly(props) {
           />{" "}
         </p>
         <p>
-          <strong>dob:</strong>{" "}
-          <input
-            value={props.dob}
-            name="dob"
-            onChange={props.handleInputChange}
-          />{" "}
-        </p>
-        <p>
           <strong>phone:</strong>{" "}
           <input
             value={props.phone}

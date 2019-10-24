@@ -39,6 +39,10 @@ class DRdiaper extends Component {
     }
 
     componentDidMount() {
+        this.setState({ memberId: this.props.memberId }, () => {
+      
+            console.log('member id ' + this.state.memberId);
+          });
 
         API.findActivityById(1)
         .then(res => {

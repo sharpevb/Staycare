@@ -10,10 +10,10 @@ function FamilyProfileReadOnly(props) {
       <div className="content">
         <ul>
           <li>
-            <strong>Family Name:</strong> {props.familyname}
+            <strong>Family Name: </strong> {props.familyname}
           </li>
           <li>
-            <strong>Family ID:</strong> {props.id}
+            <strong>Family ID: </strong> {props.id}
           </li>
 
           <li>

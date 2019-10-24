@@ -38,6 +38,9 @@ state = {
 }
 
 componentDidMount() {
+    const memberId = parseInt(sessionStorage.getItem("memberId"), () => {
+        console.log(memberId);
+    });
     // Diaper
     API.findActivityByChildId(3)
     .then(res => {

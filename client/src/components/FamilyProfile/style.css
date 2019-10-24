@@ -3,12 +3,14 @@
   background-color: cadetblue;
   float: left;
   margin: 25px;
+  border-radius: 2em;
 }
 
 #familyProfileRO {
   width: 40% !important;
   background-color: cadetblue;
 }
+
 form {
   display: table;
 }
@@ -18,6 +20,6 @@ p {
 strong {
   display: table-cell;
 }
-input {
+/* input {
   display: table-cell;
-}
+} */
