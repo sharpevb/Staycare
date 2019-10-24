@@ -3,7 +3,7 @@ import API from "../../../../utils/API";
 import "./style.css";
 
 
-class DRtitle extends Component {
+class DRtitleRO extends Component {
 
     state = {
         activity: {
@@ -45,4 +45,4 @@ class DRtitle extends Component {
 }
 
 
-export default DRtitle;
+export default DRtitleRO;

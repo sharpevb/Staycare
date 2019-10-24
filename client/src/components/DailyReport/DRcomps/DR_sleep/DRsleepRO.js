@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import API from "../../../../utils/API"
-import "./style.css";
 
-
+//const id = parseInt(sessionStorage.getItem("memberId"));
 
 class DRsleep extends Component {
 
