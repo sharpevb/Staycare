@@ -65,12 +65,12 @@ class LoginBox extends Component {
                     <form className="form-signin" id="form-login">
                         <div className="form-label-group" >
                             <input className="form-control login-fields" type="email" name="email" value={this.state.email}
-                                placeholder="Email Address" onChange={this.handleInputChange} required />
+                                autoComplete="email" placeholder="Email Address" onChange={this.handleInputChange} required />
                         </div>
 
                         <div className="form-label-group login-fields">
                             <input className="form-control login-fields" type="password" name="password" value={this.state.password}
-                                placeholder="Password" onChange={this.handleInputChange} required />
+                                autoComplete="current-password" placeholder="Password" onChange={this.handleInputChange} required />
                         </div>
                         <button id="login-button" className="btn-block " onClick={this.submitLogin}><span id="sign-in">SIGN IN</span></button>
                     </form>

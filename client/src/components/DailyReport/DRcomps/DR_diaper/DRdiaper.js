@@ -46,7 +46,6 @@ class DRdiaper extends Component {
     addBathroom() {
         var itm = document.getElementById("bathroom").childNodes;
         for (var i = 0; i < itm.length; i++) {
-            console.log(itm[i]);
             var cln = itm[i].cloneNode(true);
             document.getElementById("bathroom1").lastChild.appendChild(cln);
         }
@@ -58,7 +57,7 @@ class DRdiaper extends Component {
         API.findActivityById(1)
             .then(res => {
                 let activity = {
-                    memberId: 3,
+                    memberId: res.data.memberId,
                     activitycode: res.data.activitycode,
                     activitydate: res.data.activitydate,
                     time: res.data.time,
@@ -66,7 +65,6 @@ class DRdiaper extends Component {
                     result2: res.data.result2,
                 };
                 this.setState({ activity: activity });
-                console.log(activity);
 
 
             })

@@ -45,7 +45,6 @@ class ReportHeader extends Component {
                 // Family members and their info
                 API.findMembersByFamily(kid.familyId)
                     .then(res => {
-                        console.log(JSON.stringify(res))
                         let familyProfile = {
                             child1: res.data[0].name,
                             parent1: res.data[1].name,

@@ -29,8 +29,6 @@ class Message extends Component {
 
     const loggedIn = parseInt(sessionStorage.getItem("familyId"));
 
-    console.log("state familyId : " + loggedIn)
-
     //they have not logged in, so send them to login screen
     if (loggedIn === null) {
       window.location.replace("/login");
@@ -73,9 +71,6 @@ class Message extends Component {
         };
 
         this.setState({ selectedFamily: 0 });
-        console.log('initial selected ' + this.state.selectedFamily);
-
-        console.log('family name state ' + JSON.stringify(this.state.families));
 
       });
   };

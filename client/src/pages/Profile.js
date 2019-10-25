@@ -29,8 +29,8 @@ class Profile extends Component {
       address1: "address1",
       address2: "address2",
       createdAt: "createdAt",
-      updatedAt: "updatedAt",
-      image: "image"
+      updatedAt: "updatedAt"
+      //image: "image"
     }
   };
 
@@ -67,7 +67,6 @@ class Profile extends Component {
         };
         API.findFamilyById(res.data.FamilyId)
           .then(res => {
-            console.log(res);
             let familyProfile = {
               id: res.data.id,
               familyname: res.data.familyname,
@@ -90,8 +89,6 @@ class Profile extends Component {
     const target = e.target;
     const value = target.value;
     const name = target.name;
-    console.log(value)
-    console.log(name)
     this.setState({
       profile: {
         ...this.state.profile,
@@ -104,8 +101,6 @@ class Profile extends Component {
     const target = e.target;
     const value = target.value;
     const name = target.name;
-    console.log(value)
-    console.log(name)
     this.setState({
       familyProfile: {
         ...this.state.familyProfile,
@@ -139,7 +134,7 @@ class Profile extends Component {
         <FamilyCardEdit
           id={this.state.familyProfile.id}
           familyname={this.state.familyProfile.familyname}
-          image={this.state.familyProfile.image}
+          //image={this.state.familyProfile.image}
           primaryphone={this.state.familyProfile.primaryphone}
           address1={this.state.familyProfile.address1}
           address2={this.state.familyProfile.address2}
@@ -164,7 +159,7 @@ class Profile extends Component {
         <FamilyCardReadOnly
           id={this.state.familyProfile.id}
           familyname={this.state.familyProfile.familyname}
-          image={this.state.familyProfile.image}
+          //image={this.state.familyProfile.image}
           primaryphone={this.state.familyProfile.primaryphone}
           address1={this.state.familyProfile.address1}
           address2={this.state.familyProfile.address2}

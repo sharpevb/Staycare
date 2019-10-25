@@ -21,7 +21,7 @@ class DRnotes extends Component {
         API.findActivityById(7)
             .then(res => {
                 let activity = {
-                    memberId: 3,
+                    memberId: res.data.MemberId,
                     activitycode: res.data.activitycode,
                     activitydate: res.data.activitydate,
                     time: res.data.time,
@@ -29,7 +29,6 @@ class DRnotes extends Component {
                     result2: res.data.result2
                 };
                 this.setState({ activity: activity });
-                console.log(activity);
 
                 
             })
