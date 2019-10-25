@@ -5,7 +5,7 @@ Deployed at: http://staycare.herokuapp.com/
 
 ## The What
 
-*StayCare is an electronic management system for small, in-home daycare providers. StayCare allows the provider to edit and display a child's daily activities throughout the day and can send email and text message (SMS/MMS) updates throughout the day to a child's parents or to all families. Meanwhile, parents can view their child's daily report in real-time and have a profile page where they can easily edit and update their contact information.*
+*StayCare is an electronic management system for small, in-home daycare providers. StayCare allows the provider to edit and display a child's daily activities throughout the day and can send email and text message (SMS/MMS) updates throughout the day to a child's parent or to all families. Meanwhile, parents can view their child's daily report in real-time and have a profile page where they can easily edit and update their contact information.*
 
 ## The Who
 
@@ -38,4 +38,27 @@ The primary goal of StayCare is to help assist small, in-home daycare providers 
 - Nodemail
 - Heroku
 
-## Demo
+# Demo
+## Login
+Because StayCare is a childcare app, a random user isn't able to create an account. In future development, only providers will be able to create an account for a parent/family and pass along those credentials to them.
+![1_login.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/1_login.png)
+
+
+## Homepage
+If a user loggin in is a provider, they will see all of the children under their care. If a parent logs in, they will only see their child.
+![2_homepage.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/2_homepage.png)
+
+
+## Daily Report
+A provider will be able to edit and report each child's daily behavior, meals, naptime, diaper changes, and administered medications into the database. When a parent checks in on their child's daily report, they see a read out of that report.
+![3_dailyreport.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/3_dailyreport.png)
+
+
+## Profile
+Parents can easily view and edit their contact information at anytime! They can also add any emergency contacts or other authorized adults to pick up their child.
+![4_profile.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/4_profile.png)
+
+
+## Message
+Providers can send out updates during the day to a child's parent or an announcement to all registered family members. They can include an optional picture to these updates as well. Parents have the opportunity to send messages to providers as well.
+![message.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/5_message.png)
