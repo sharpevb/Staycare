@@ -34,7 +34,7 @@ The primary goal of StayCare is to help assist small, in-home daycare providers 
 - MySQL
 - Sequelize
 - Formidable
-- Nodemail
+- Nodemailer
 - Heroku
 
 ## The How - try it out!
