@@ -1,29 +1,41 @@
-# Create React Express App
+# StayCare
 
-## About This Boilerplate
+Staycare was developed at the University of Richmond Web Development Bootcamp (May - October 2019 cohort).
+Deployed at: http://staycare.herokuapp.com/
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## The What
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+*StayCare is an electronic management system for small, in-home daycare providers. StayCare allows the provider to edit and display a child's daily activities throughout the day and can send email and text message (SMS/MMS) updates throughout the day to a child's parents or to all families. Meanwhile, parents can view their child's daily report in real-time and have a profile page where they can easily edit and update their contact information.*
 
-## Starting the app locally
+## The Who
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Created and developed by Team DVD: 
 
-```
-npm install
-```
+**Deb Warrick:**
+*Express server, JSX, API routes, Database design, Drag-and-drop/file upload functionality (Homepage, Message page)*
 
-This should install node modules within the server and the client folder.
 
-After both installations complete, run the following command in your terminal:
+**Victoria Sharpe:**
+*UI/UX Design, CSS styling, JSX functionality and structure (Login page, Daily Report)*
 
-```
-npm start
-```
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+**Darren Hall:**
+*CSS styling, JSX, Front end data display and editability (Profile page)*
 
-## Deployment (Heroku)
+## The Why
+The primary goal of StayCare is to help assist small, in-home daycare providers securely move into the digital age! Our app gives providers the ability to streamline daily processes by being able to fill out digital daily reports to parents rather than taking the time to fill out paper forms for each child. It also has the capability for providers to digitally send updates to parents throughout the day to ease any anxiety parents may have.
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## The How
+### Technologies Used:
+- React.js
+- Node.js
+- Express.js
+- CORS
+- Bootstrap/React-Bootstrap
+- MySQL
+- Sequelize
+- Formidable
+- Nodemail
+- Heroku
+
+## Demo
