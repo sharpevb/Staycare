@@ -12,7 +12,7 @@ Deployed at: http://staycare.herokuapp.com/
 Created and developed by Team DVD: 
 
 **Deb Warrick:**
-*Express server, JSX, API routes, Database design, Drag-and-drop/file upload functionality (Homepage, Message page)*
+*Express server, JSX, API routes, Database design, Drag-and-drop/file upload functionality, email/MMS messaging (Homepage, Message page).* https://debwarrick.com
 
 
 **Victoria Sharpe:**
@@ -25,8 +25,7 @@ Created and developed by Team DVD:
 ## The Why
 The primary goal of StayCare is to help assist small, in-home daycare providers securely move into the digital age! Our app gives providers the ability to streamline daily processes by being able to fill out digital daily reports to parents rather than taking the time to fill out paper forms for each child. It also has the capability for providers to digitally send updates to parents throughout the day to ease any anxiety parents may have.
 
-## The How
-### Technologies Used:
+## Technologies Used:
 - React.js
 - Node.js
 - Express.js
@@ -38,11 +37,14 @@ The primary goal of StayCare is to help assist small, in-home daycare providers 
 - Nodemail
 - Heroku
 
-# Demo
+## The How - try it out!
 ## Login
 Because StayCare is a childcare app, a random user isn't able to create an account. In future development, only providers will be able to create an account for a parent/family and pass along those credentials to them.
-![1_login.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/1_login.png)
+Test user account/password logins for demo are
+* provider - sandra.staycare@hotmail.com /password.
+* parent - herman.munster@scaryway.com /password.
 
+![1_login.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/1_login.png)
 
 ## Homepage
 If a user loggin in is a provider, they will see all of the children under their care. If a parent logs in, they will only see their child.
@@ -60,5 +62,5 @@ Parents can easily view and edit their contact information at anytime! They can 
 
 
 ## Message
-Providers can send out updates during the day to a child's parent or an announcement to all registered family members. They can include an optional picture to these updates as well. Parents have the opportunity to send messages to providers as well.
+Providers can send out updates during the day to a child's parent or an announcement to all registered family members. They can include an optional picture to these updates as well. Parents have the opportunity to send messages to providers as well.  If you test this out, email and text will be sent to the developers for the "White" family or "All".  Messages can be sent for the Munsters but do not go to active recipients.
 ![message.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/5_message.png)
