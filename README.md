@@ -47,7 +47,7 @@ Test user account/password logins for demo are
 ![1_login.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/1_login.png)
 
 ## Homepage
-If a user loggin in is a provider, they will see all of the children under their care. If a parent logs in, they will only see their child.
+If a provider logs in, they will see all of the children under their care. If a parent logs in, they will only see their child.
 ![2_homepage.png](https://github.com/sharpevb/Staycare/blob/master/client/public/assets/demo/2_homepage.png)
 
 
