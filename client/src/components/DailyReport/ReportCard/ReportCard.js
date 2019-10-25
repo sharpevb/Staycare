@@ -42,7 +42,7 @@ componentDidMount() {
         console.log(memberId);
     });
     // Diaper
-    API.findActivityByChildId(3)
+    API.findActivityByChildId(memberId)
     .then(res => {
         let activity = {
             id: res.data.id,
@@ -54,22 +54,7 @@ componentDidMount() {
         this.setState({activity: activity});
         //console.log(activity);
     })
-    //.catch(err => console.log(err));
-    // API.findActivityByChildId(3)
-    // .then(res => {
-    //     let id = {
-    //         memberId: 3,
-    //         activitycode: res.data.activitycode,
-    //         activitydate: "2019-10-09",
-    //         time: res.data.time,
-    //         result1: res.data.result1,
-    //         result2: res.data.result2
-    //     };
-    //     this.setState({id: id});
-    //     console.log(id);
-    // })
-
-    API.findMembersByFamily(0)
+     API.findMembersByFamily(0)
     .then(res => {
         console.log(res)
         let provider = {

@@ -42,26 +42,15 @@ class Upload extends Component {
   async uploadFiles() {
     this.setState({ uploadProgress: {}, uploading: true });
 
-    console.log('selectedFamily ' + this.props.selectedFamily);
-    console.log('families ' + this.props.families);
-    console.log('selected family prop ' + this.props.selectedFamily);
-    console.log('selected family state ' + this.props.selectedFamily);
     var index = this.props.selectedFamily;
-    console.log('index ' + index)
     var afamily = this.props.families[index];
     var address = afamily.addresses;
-    console.log('address '+address)
     //  var address = this.props.families[index].addresses;
     //make sure the address is set before proceeding
     this.setState({ addresses: address }, () => {
-      console.log('addresses state ' + this.state.addresses);});
+      console.log('addresses state ' + this.state.addresses);
+    });
 
-    console.log('addresses ' + index);
-    console.log('families ' + JSON.stringify(this.props.families))
-    console.log("Family", this.props.familyname);
-   // console.log("addresses props" + this.props.addresses);
-    console.log("addresses state" + this.state.addresses);
-    
     const promises = [];
 
     // only upload files if not just email.
@@ -84,11 +73,9 @@ class Upload extends Component {
         "to": address, "subject": this.props.subject, "text": this.props.message,
         "filename": []
       };
-      //if sending an email, otherwise just uploading
-      console.log("email " + JSON.stringify(email));
+      //if sending just an email, otherwise just uploading and sending
       API.sendEmail(email)
         .then(res => {
-          console.log('res ' + JSON.stringify(res))
           this.setState({ successfullUploaded: true, uploading: false });
           if (res.data.status === "error") {
             throw new Error(res.data);
@@ -151,10 +138,8 @@ class Upload extends Component {
               "filename": res.data.filename
             }
             //if sending an email, otherwise just uploading
-            console.log("email " + JSON.stringify(email));
             API.sendEmail(email)
               .then(res => {
-                console.log('res ' + JSON.stringify(res))
                 //this.setState({ successfullUploaded: true, uploading: false });
                 if (res.data.status === "error") {
                   throw new Error(res.data);
@@ -167,23 +152,6 @@ class Upload extends Component {
             resolve(req.response);
           }
         });
-      /* }
-       else {
-         const email = {
-           "to": this.state.addresses, "subject": this.props.subject, "text": this.props.message
-         };
-         //if sending an email, otherwise just uploading
-         console.log("email " + JSON.stringify(email));
-         API.sendEmail(email)
-           .then(res => {
-             console.log('res ' + JSON.stringify(res))
-             //this.setState({ successfullUploaded: true, uploading: false });
-             if (res.data.status === "error") {
-               throw new Error(res.data);
-             }
-             resolve(req.response);
-           });
-       };*/
     });
   };
 

@@ -27,7 +27,7 @@
 #card-text {
     margin: 0 auto;
 }
-#login-fields {
+.login-fields {
     margin-bottom: 30px;
     width: 300px;
     text-align: center;

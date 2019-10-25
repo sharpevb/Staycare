@@ -1,5 +1,5 @@
 #profileCardEditable {
-  width: 40% !important;
+  width: 30% !important;
   background-color: cadetblue;
   float: left;
   margin: 25px;
@@ -22,4 +22,10 @@ strong {
 }
 input {
   display: table-cell;
+}
+#member-img {
+  width: 250px;
+  height: 300px;
+  margin-left: 20%;
+  margin-bottom:15px;
 }

@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 const app = express();
 
-/*daw 18-Oct-2019*/
 //cors needed for file upload
 const cors = require('cors');
 var corsOptions = {
