@@ -12,12 +12,9 @@ class DailyReport extends Component {
   componentDidMount() {
     //this will get the parameter passed on the command line, which will be the memberId
     const { match: { params } } = this.props;
-    console.log('params.member id ' + params.memberId)
     const paramId = parseInt(params.memberId);
     sessionStorage.setItem("memberId", paramId);
-    this.setState({ memberId: paramId }, () => {
-      
-      console.log('member id ' + this.state.memberId);
+    this.setState({ memberId: paramId }, () => { 
       
     });
   };

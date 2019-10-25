@@ -39,63 +39,63 @@ class DRdiaper extends Component {
     }
 
     componentDidMount() {
-        this.setState({ memberId: this.props.memberId }, () => {
-      
-            console.log('member id ' + this.state.memberId);
-          });
+        const memberId = parseInt(sessionStorage.getItem("memberId"), () => {
+
+            this.setState({ memberId: memberId }, () => {
+
+                console.log('member id ' + this.state.memberId);
+            });
+        });
 
         API.findActivityById(1)
-        .then(res => {
-            let activity1 = {
-                memberId: 3,
-                activitycode: res.data.activitycode,
-                activitydate: res.data.activitydate,
-                time: res.data.time,
-                result1: res.data.result1,
-                result2: res.data.result2,
-            };
-            this.setState({ activity1: activity1 });
-            console.log(activity1);
+            .then(res => {
+                let activity1 = {
+                    memberId: res.data.MemberId,
+                    activitycode: res.data.activitycode,
+                    activitydate: res.data.activitydate,
+                    time: res.data.time,
+                    result1: res.data.result1,
+                    result2: res.data.result2,
+                };
+                this.setState({ activity1: activity1 });
 
 
-        })
-        .catch(err => console.log(err));
-       
-        
+            })
+            .catch(err => console.log(err));
+
+
         API.findActivityById(2)
-        .then(res => {
-            let activity2 = {
-                memberId: 3,
-                activitycode: res.data.activitycode,
-                activitydate: res.data.activitydate,
-                time: res.data.time,
-                result1: res.data.result1,
-                result2: res.data.result2,
-            };
-            this.setState({ activity2: activity2 });
-            console.log(activity2);
+            .then(res => {
+                let activity2 = {
+                    memberId: res.data.MemberId,
+                    activitycode: res.data.activitycode,
+                    activitydate: res.data.activitydate,
+                    time: res.data.time,
+                    result1: res.data.result1,
+                    result2: res.data.result2,
+                };
+                this.setState({ activity2: activity2 });
 
 
-        })
-        .catch(err => console.log(err));
-      
+            })
+            .catch(err => console.log(err));
+
 
         API.findActivityById(3)
-        .then(res => {
-            let activity3 = {
-                memberId: 3,
-                activitycode: res.data.activitycode,
-                activitydate: res.data.activitydate,
-                time: res.data.time,
-                result1: res.data.result1,
-                result2: res.data.result2,
-            };
-            this.setState({ activity3: activity3 });
-            console.log(activity3);
+            .then(res => {
+                let activity3 = {
+                    memberId: res.data.MemberId,
+                    activitycode: res.data.activitycode,
+                    activitydate: res.data.activitydate,
+                    time: res.data.time,
+                    result1: res.data.result1,
+                    result2: res.data.result2,
+                };
+                this.setState({ activity3: activity3 });
 
 
-        })
-        .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
 
     }
 

@@ -5,7 +5,7 @@ function FamilyProfileReadOnly(props) {
     <div>
     <div className="card-body" id="familyProfileRO">
       
-        <img alt={props.name} src={props.image} />
+        {/*<img alt={props.name} src={props.image} />*/}
 
       <div className="content">
         <ul>

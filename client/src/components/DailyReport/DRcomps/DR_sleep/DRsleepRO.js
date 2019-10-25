@@ -26,7 +26,7 @@ class DRsleep extends Component {
         API.findActivityById(6)
         .then(res => {
             let activity6 = {
-                memberId: 3,
+                memberId: res.data.MemberId,
                 activitycode: res.data.activitycode,
                 activitydate: res.data.activitydate,
                 time: res.data.time,
@@ -34,7 +34,6 @@ class DRsleep extends Component {
                 result2: res.data.result2,
             };
             this.setState({ activity6: activity6 });
-            console.log(activity6);
 
 
         })

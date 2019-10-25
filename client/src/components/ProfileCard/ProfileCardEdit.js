@@ -3,37 +3,13 @@ import "./style.css";
 
 function ProfileCardEdit(props) {
   return (
-    <div>
-      
+    <div>  
         <div className="card-body" id="profileCardEditable">
-        <img id="member-img" src={props.image} className="card-img-top" alt={`No Image Available ${props.image}`}></img>
-        `${props.id}`
-            <p>
-              <strong>Name:</strong>{" "}
-              <p name="name"
-                onChange={props.handleInputChange}> {props.name}</p>
-            </p>
-            <p>
-              <strong>Relationship: {""}</strong>
-              <p name="membertype"
-                onChange={props.handleInputChange}>
-                {" "}{props.membertype}</p>
-            </p>
-            <p>
-              <strong>Email:</strong>{" "}
-              <p name="email"
-                onChange={props.handleInputChange}>
-                {props.email}</p>
-            </p>
-            <p>
-              <strong>Phone:</strong>{" "}
-              <p name="phone"
-                onChange={props.handleInputChange}>
-                {props.phone}
-
-              </p>{" "}
-            </p>
-
+        <img id="member-img" src={props.image} className="card-img-top" alt={'Not Available'}></img>
+        <p name="name" onChange={props.handleInputChange}> <strong>Name: </strong>   {props.name}</p> 
+        <p name="membertype" onChange={props.handleInputChange}> <strong>Member Type: </strong>  {props.membertype}</p> 
+        <p name="email" onChange={props.handleInputChange}> <strong>Email: </strong>   {props.email}</p> 
+        <p name="phone" onChange={props.handleInputChange}> <strong>Phone: </strong>   {props.phone}</p>
         </div>
       </div>
 

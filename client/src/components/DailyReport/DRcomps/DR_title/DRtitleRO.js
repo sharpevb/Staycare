@@ -16,11 +16,10 @@ class DRtitleRO extends Component {
         API.findActivityById(1)
         .then(res => {
             let activity = {
-                memberId: 3,
+                memberId: res.data.MemberId,
                 activitydate: res.data.activitydate,
             };
             this.setState({ activity: activity });
-            console.log(activity);
 
 
         })

@@ -26,7 +26,6 @@ class Homepage extends Component {
           }
           //filter to just children.
           const results = res.data;
-          console.log('result length ' + results.length)
 
           const newArray = results.filter(result => result.membertype === "Child");
           this.setState({ children: newArray, error: "" });

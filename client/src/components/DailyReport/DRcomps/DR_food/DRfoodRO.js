@@ -34,7 +34,7 @@ class DRfood extends Component {
         API.findActivityById(4)
         .then(res => {
             let activity4 = {
-                memberId: 3,
+                memberId: res.data.MemberId,
                 activitycode: res.data.activitycode,
                 activitydate: res.data.activitydate,
                 time: res.data.time,
@@ -42,7 +42,7 @@ class DRfood extends Component {
                 result2: res.data.result2,
             };
             this.setState({ activity4: activity4 });
-            console.log(activity4);
+
 
 
         })
@@ -52,7 +52,7 @@ class DRfood extends Component {
         API.findActivityById(5)
         .then(res => {
             let activity5 = {
-                memberId: 3,
+                memberId: res.data.MemberId,
                 activitycode: res.data.activitycode,
                 activitydate: res.data.activitydate,
                 time: res.data.time,
@@ -60,7 +60,6 @@ class DRfood extends Component {
                 result2: res.data.result2,
             };
             this.setState({ activity5: activity5 });
-            console.log(activity5);
 
 
         })
