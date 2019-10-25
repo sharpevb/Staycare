@@ -1,5 +1,4 @@
 .Upload {
-  /*display: flex;*/
   flex-direction: column;
   flex: 1;
   align-items: flex-start;
@@ -25,8 +24,6 @@
 }
 
 .Actions {
-  /*display: flex;
-  flex: 1;*/
   width: 100%;
   align-items: flex-end;
   flex-direction: column;
@@ -71,7 +68,6 @@
 button {
   font-family: "Roboto medium", sans-serif;
   font-size: 14px;
-  /*display: inline-block;*/
   height: 36px;
   min-width: 88px;
   padding: 6px 16px;

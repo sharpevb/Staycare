@@ -4,7 +4,6 @@ const sequelize = require('sequelize')
 // Defining methods for the memberController
 module.exports = {
   findMembers: function (req, res) {
-    console.log('db.member')
     db.Member.findAll({})
       .then(dbMember => res.json(dbMember))
       .catch(err => res.status(422).json(err));
@@ -18,7 +17,6 @@ module.exports = {
 
   // Update a member
   updateMember: function (req, res) {
-    console.log('db.update ' + req.body)
     db.Member.update(req.body, {
       where: {
         id: req.params.id
@@ -45,7 +43,6 @@ module.exports = {
   },
   //passing in the family id to get the associated children
   findMembersByFamily: function (req, res) {
-    console.log("findmembersbyfamily req id" + JSON.stringify(req.params.id));
     db.Member.findAll({
       include: [db.Family],
       where: { FamilyId: req.params.id },
@@ -63,10 +60,9 @@ module.exports = {
     var v_password = object_query.password;
     //this will encrypt the password entered for comparison.
     db.Member.findOne({
-      attributes: ["FamilyId"],
+      attributes: ["FamilyId", "id"],
       where: { password: db.sequelize.fn('aes_encrypt', v_password, 'fullstack'), email: v_email }
     }).then(function (dbMember) {
-      console.log("dbmembr " + JSON.stringify(dbMember));
       res.json(JSON.stringify(dbMember));
     });
   },
@@ -75,7 +71,6 @@ module.exports = {
     db.sequelize.query("SELECT a.id, familyname, GROUP_CONCAT(textaddress) addresses FROM Families a, Members b WHERE a.id = b.familyid GROUP BY a.id, familyname ORDER BY familyname",
       { type: db.sequelize.QueryTypes.SELECT })
       .then(function (family) {
-        console.log('family ' + JSON.stringify(family))
         res.json(JSON.stringify(family));
       });
   }

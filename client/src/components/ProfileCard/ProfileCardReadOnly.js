@@ -6,7 +6,7 @@ function ProfileCardReadOnly(props) {
 
 
     <div>
-      {/* <img src="mountain3" className="card-img-top" alt="..." /> */}
+      {/* <img src={props.image} className="card-img-top" alt={props.name} /> */}
       <div className="card-body" id="ProfileCardRO">
         <div className="card-body">
         <p>

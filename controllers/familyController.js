@@ -9,7 +9,6 @@ module.exports = {
   },
   // add a new family
   createFamily: function (req, res) {
-    console.log("create family "+JSON.stringify(req.body))
     db.Family.create(req.body).then(function (dbFamily) {
       res.json(dbFamily);
     });
@@ -17,7 +16,6 @@ module.exports = {
 
   // Update a family
   updateFamily: function (req, res) {
-    console.log('update family '+JSON.stringify(req.body))
     db.Family.update(req.body, {
       where: {
         id: req.params.id

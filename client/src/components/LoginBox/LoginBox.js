@@ -28,13 +28,13 @@ class LoginBox extends Component {
             API.validateUser(login)
                 .then(res => {
                     //make sure data is not null
-                    console.log("res.data"+res.data)
                     if (res.data !== null && JSON.parse(res.data) !== null) {
-                        console.log("res.data parse "+JSON.parse(res.data))
                         var result = JSON.parse(res.data).FamilyId;
+                        var id = JSON.parse(res.data).id;
                         //also store in session state if found
                         if (result >= 0) {
                             sessionStorage.setItem("familyId", result);
+                            sessionStorage.setItem("memberIdLogged", id);
                             window.location.replace("/");
                         }
                         else {
@@ -64,14 +64,12 @@ class LoginBox extends Component {
                 <div className="card-text" id="card-text">
                     <form className="form-signin" id="form-login">
                         <div className="form-label-group" >
-                            {/* <label id="label" htmlFor="email">Email Address:</label> */}
-                            <input className="form-control" id="login-fields" type="email" name="email" value={this.state.email}
+                            <input className="form-control login-fields" type="email" name="email" value={this.state.email}
                                 placeholder="Email Address" onChange={this.handleInputChange} required />
                         </div>
 
-                        <div className="form-label-group" id="login-fields">
-                            {/* <label id="label" htmlFor="password">Password:</label> */}
-                            <input className="form-control" id="login-fields" type="password" name="password" value={this.state.password}
+                        <div className="form-label-group login-fields">
+                            <input className="form-control login-fields" type="password" name="password" value={this.state.password}
                                 placeholder="Password" onChange={this.handleInputChange} required />
                         </div>
                         <button id="login-button" className="btn-block " onClick={this.submitLogin}><span id="sign-in">SIGN IN</span></button>

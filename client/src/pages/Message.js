@@ -42,9 +42,8 @@ class Message extends Component {
         if (res.data.status === "error") {
           throw new Error(res.data);
         };
-        console.log('results 0' + JSON.stringify(res))
         const results = JSON.parse(res.data);
-        console.log('results ' + results)
+
         var provider = 0;   //index of the provider/send to all record.
         var all_emails = '';  //concatenate all addresses
         if (loggedIn === 0) {

@@ -12,7 +12,6 @@ function ChildCard(props) {
             `/dailyreport/${props.id }`
           }
         >
-          {/*<img alt={props.name} src={props.image} />*/}
           <img id={props.id} alt={props.name} src={props.image} onClick={(e) => sessionStorage.setItem("memberId", `${props.id}`)}/>
         </Link>
         

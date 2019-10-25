@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
-//import ReportCardRO from "../components/DailyReport/ReportCard/ReportCardRO";
-//import API from "../utils/API";
-//import Reportpage from "../components/DailyReport/Reportpage";
 import ReportpageRO from "../components/DailyReport/ReportpageRO";
 
 class DailyReport extends Component {

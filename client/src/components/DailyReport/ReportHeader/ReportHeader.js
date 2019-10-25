@@ -26,16 +26,11 @@ class ReportHeader extends Component {
         const memberId = parseInt(sessionStorage.getItem("memberId"), () => {
             console.log(memberId);
         });
-        // const memberId = this.props.memberId;
-        //     console.log(memberId);
-        
-        
-        const familyId = parseInt(sessionStorage.getItem("familyId"));
-        //Eddie Info
+
+        //child information
         API.findMemberById(memberId)
-        
+
             .then(res => {
-                //console.log(JSON.stringify(res.data))
                 let kid = {
                     id: res.data.id,
                     name: res.data.name,
@@ -46,29 +41,25 @@ class ReportHeader extends Component {
                     familyId: res.data.FamilyId
                 };
                 this.setState({ kid: kid })
-            
-        //.catch(err => console.log(err));
 
-        // Family members and their info
-        API.findMembersByFamily(kid.familyId)
-            .then(res => {
-                console.log(JSON.stringify(res))
-                let familyProfile = {
-                    child1: res.data[0].name,
-                    parent1: res.data[1].name,
-                    parent2: res.data[2].name,
-                    surname: res.data[0].Family.familyname,
-                    primaryphone: res.data[1].phone
-                };
-                this.setState({ familyProfile: familyProfile });
-                //console.log(familyProfile);
-            });
-            });
-        //.catch(err => console.log(err));
+                // Family members and their info
+                API.findMembersByFamily(kid.familyId)
+                    .then(res => {
+                        console.log(JSON.stringify(res))
+                        let familyProfile = {
+                            child1: res.data[0].name,
+                            parent1: res.data[1].name,
+                            parent2: res.data[2].name,
+                            surname: res.data[0].Family.familyname,
+                            primaryphone: res.data[1].phone
+                        };
+                        this.setState({ familyProfile: familyProfile });
 
-       
-    }
-
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(err => console.log(err));
+    };
 
     render() {
         return (
@@ -78,7 +69,7 @@ class ReportHeader extends Component {
                     <div className="image-wrapper">
                         <img className="image-responsive" id="image" alt={this.state.kid.image} src={"../" + this.state.kid.image}></img>
                     </div>
-                    
+
                     <div className="col-9" id="header-info">
                         <h1 id="child-name">{this.state.kid.name} {this.state.familyProfile.surname}</h1>
                         <div className="row">

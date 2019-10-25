@@ -42,18 +42,7 @@ class DRdiaper extends Component {
         formSubmitEvent.preventDefault();
 
     }
-    // handleSubmit(event) {
-    //     event.preventDefault();
-
-    //     alert(`You chose the ${this.state.result1} pizza.`);
-    //   }
-
-    // handleChange(event) {
-    //     this.setState({
-    //       result1: event.target.value
-    //     });
-    //   }
-
+ 
     addBathroom() {
         var itm = document.getElementById("bathroom").childNodes;
         for (var i = 0; i < itm.length; i++) {
@@ -84,7 +73,6 @@ class DRdiaper extends Component {
             .catch(err => console.log(err));
     }
 
-    //API.updateActivity(id, memberData)
 
 
     render() {
